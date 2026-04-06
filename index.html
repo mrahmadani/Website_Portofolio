@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Portofolio</title>
+<link rel="icon" type="image/png" href="favicon123.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<style>
+/* ========== GLOBAL STYLES (DARK THEME) ========== */
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #09090b; /* Zinc 950 */
+  color: #e4e4e7; /* Zinc 200 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: #3b82f6; color: #fff; }
+
+/* Background Glowing Blobs Animation */
+@keyframes pulse-bg {
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+  50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+}
+
+.bg-glow {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, rgba(9,9,11,0) 70%);
+  z-index: -2; pointer-events: none;
+  animation: pulse-bg 10s ease-in-out infinite;
+}
+
+/* Floating Particles */
+@keyframes float-particle {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-30px) scale(1.2); opacity: 0.8; }
+  100% { transform: translateY(0) scale(1); opacity: 0.3; }
+}
+.particle {
+  position: fixed; border-radius: 50%; pointer-events: none; z-index: -1;
+  animation: float-particle ease-in-out infinite;
+}
+
+/* ========== FLOATING ISLAND NAVBAR ========== */
+nav {
+  position: fixed; top: 1.5rem; left: 50%; transform: translateX(-50%);
+  width: 90%; max-width: 800px;
+  background: rgba(24, 24, 27, 0.6) !important; /* Zinc 900 */
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 100px;
+  padding: 10px 24px !important; z-index: 50;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  display: flex !important; justify-content: space-between !important; align-items: center !important;
+}
+
+.nav-glass-btn {
+  padding: 8px 16px; font-weight: 500; font-size: 0.95rem;
+  color: #a1a1aa; transition: all 0.3s ease; border-radius: 100px; cursor: pointer;
+}
+.nav-glass-btn:hover { color: #fff; transform: translateY(-2px); }
+.nav-glass-btn.active {
+  background: rgba(255, 255, 255, 0.1); color: #fff;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
+}
+.nav-brand { font-weight: 700; color: #fff; letter-spacing: 0.5px; cursor: pointer; transition: transform 0.3s ease; }
+.nav-brand:hover { transform: scale(1.05); }
+
+/* ========== DRAWER MENU (MOBILE) ========== */
+.drawer-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px);
+  z-index: 60; opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.drawer-overlay.active { opacity: 1; visibility: visible; }
+.drawer-menu {
+  position: fixed; top: 0; right: 0; width: 85%; max-width: 320px; height: 100%;
+  background: #18181b; border-left: 1px solid rgba(255,255,255,0.05);
+  z-index: 70; transform: translateX(100%); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 32px 24px; display: flex; flex-direction: column; gap: 24px;
+}
+.drawer-menu.open { transform: translateX(0); }
+.drawer-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.drawer-brand { font-weight: 800; font-size: 1.25rem; color: #fff; }
+.drawer-close {
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: #27272a; cursor: pointer; font-size: 18px; color: #a1a1aa; transition: 0.3s;
+}
+.drawer-close:hover { background: #3f3f46; color: #fff; transform: rotate(90deg); }
+.drawer-nav-item {
+  display: flex; align-items: center; padding: 14px 20px; border-radius: 12px; font-weight: 500; color: #a1a1aa;
+  transition: all 0.3s ease; border: 1px solid transparent;
+}
+.drawer-nav-item.active { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-color: rgba(59, 130, 246, 0.2); transform: translateX(5px); }
+
+.mobile-hamburger { display: none; padding: 8px 10px; cursor: pointer; align-items: center; border-radius: 8px; background: transparent; }
+.hamburger-icon { width: 24px; height: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+.hamburger-icon span { width: 100%; height: 2px; background-color: #fff; border-radius: 2px; transition: 0.3s; }
+.desktop-menu { display: flex; align-items: center; gap: 0.25rem; }
+
+@media (max-width: 768px) {
+  .desktop-menu { display: none !important; }
+  .mobile-hamburger { display: flex !important; }
+  nav { top: 1rem; width: 92%; padding: 12px 20px !important; }
+}
+
+/* ========== HERO ANIMATIONS ========== */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float { animation: float 5s ease-in-out infinite; }
+
+@keyframes pulse-primary {
+  0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); transform: scale(1); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); transform: scale(1.02); }
+  100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); transform: scale(1); }
+}
+
+/* HIGH VISIBILITY BUTTON */
+.btn-glow-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff; padding: 16px 40px; border-radius: 100px;
+  font-weight: 700; font-size: 1.15rem; transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: pulse-primary 2.5s infinite;
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.5);
+}
+.btn-glow-primary:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  animation: none; box-shadow: 0 0 40px rgba(96, 165, 250, 0.8);
+  transform: translateY(-5px) scale(1.05);
+}
+
+/* ========== DARK CARDS & UI ELEMENTS ========== */
+.card {
+  background: #18181b; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+.card:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15); }
+
+/* Skills Tags UX */
+ul.tags-container { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+ul.tags-container li {
+  background: #27272a; border: 1px solid #3f3f46; color: #d4d4d8; padding: 8px 16px; border-radius: 100px;
+  font-size: 0.9rem; font-weight: 500; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+ul.tags-container li:hover {
+  background: #3f3f46; border-color: #60a5fa; color: #fff;
+  transform: scale(1.1) translateY(-2px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Scroll Container */
+.horizontal-scroll-container {
+  overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 20px 20px 60px 20px; cursor: grab; scroll-behavior: smooth;
+}
+.horizontal-scroll-container:active { cursor: grabbing; }
+.horizontal-scroll-wrapper { display: inline-flex; gap: 2rem; padding: 0 1rem; }
+.horizontal-scroll-container::-webkit-scrollbar { height: 4px; }
+.horizontal-scroll-container::-webkit-scrollbar-track { background: #18181b; border-radius: 10px; }
+.horizontal-scroll-container::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 10px; }
+.scroll-card { display: inline-block; width: 320px; white-space: normal; vertical-align: top; cursor: pointer; }
+@media (min-width: 768px) { .scroll-card { width: 380px; } }
+
+/* Reveal Animation */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+
+/* ========== TIMELINE ZIG ZAG ========== */
+.timeline-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+/* Glowing Center Line */
+.timeline-container::after {
+  content: ''; position: absolute; width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.8), rgba(59, 130, 246, 0.3), transparent);
+  top: 0; bottom: 0; left: 50%; margin-left: -1px;
+}
+.timeline-item {
+  padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+/* The Dot */
+.timeline-dot-zz {
+  position: absolute; width: 20px; height: 20px;
+  background-color: #09090b; border: 3px solid #3b82f6;
+  border-radius: 50%; z-index: 10; top: 38px;
+  animation: radar-pulse 2s infinite;
+}
+.timeline-item.left .timeline-dot-zz { right: -10px; }
+.timeline-item.right .timeline-dot-zz { left: -10px; }
+
+/* Connecting Line to Card */
+.timeline-item::before {
+  content: " "; position: absolute; top: 47px;
+  width: 30px; height: 2px; background: rgba(255,255,255,0.1); z-index: 0;
+}
+.timeline-item.left::before { right: 10px; }
+.timeline-item.right::before { left: 10px; }
+
+@keyframes radar-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+/* Mobile Fallback (Straight Line on Left) */
+@media screen and (max-width: 768px) {
+  .timeline-container::after { left: 24px; }
+  .timeline-item { width: 100%; padding-left: 60px; padding-right: 10px; }
+  .timeline-item.left, .timeline-item.right { left: 0; }
+  .timeline-item.left .timeline-dot-zz, .timeline-item.right .timeline-dot-zz { left: 14px; right: auto; }
+  .timeline-item.left::before, .timeline-item.right::before { left: 34px; right: auto; width: 26px; }
+}
+
+
+/* ========== MODAL & BUTTONS ========== */
+.modal-img-container {
+  touch-action: pan-x pan-y; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: #09090b; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);
+}
+
+.floating-reset-btn {
+  position: absolute; bottom: 20px; right: 20px;
+  background: rgba(39, 39, 42, 0.8); backdrop-filter: blur(8px);
+  border-radius: 100px; padding: 10px 20px; font-weight: 600; color: #fff; border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5); cursor: pointer; transition: all 0.3s ease;
+  z-index: 60; font-size: 0.85rem; display: none; align-items: center; gap: 6px;
+}
+.floating-reset-btn:hover { background: #3b82f6; border-color: #60a5fa; transform: scale(1.05); }
+
+#floatingContact {
+  background: #3b82f6; color: #fff; box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+  border-radius: 100px; padding: 14px 26px; font-weight: 600; transition: all 0.4s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+}
+#floatingContact:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+
+.modal-nav-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(24, 24, 27, 0.8); backdrop-filter: blur(8px);
+  border-radius: 50%; font-size: 1.2rem; color: #fff; border: 1px solid rgba(255,255,255,0.1);
+  cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 65; display: flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; opacity: 0; visibility: hidden;
+}
+.modal-nav-btn:hover { background: #3b82f6; transform: translateY(-50%) scale(1.15); border-color: #60a5fa; }
+.modal-nav-btn.left { left: 20px; }
+.modal-nav-btn.right { right: 20px; }
+.modal-nav-btn.visible { opacity: 1; visibility: visible; }
+
+/* Typography Gradients */
+.text-gradient { background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.text-accent { color: #60a5fa; text-shadow: 0 0 20px rgba(96, 165, 250, 0.4); }
+</style>
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="particle bg-blue-500 w-2 h-2 top-[20%] left-[15%] blur-[1px]" style="animation-duration: 4s;"></div>
+<div class="particle bg-blue-400 w-3 h-3 top-[60%] right-[10%] blur-[2px]" style="animation-duration: 6s; animation-delay: 1s;"></div>
+<div class="particle bg-indigo-500 w-2 h-2 bottom-[15%] left-[25%] blur-[1px]" style="animation-duration: 5s; animation-delay: 2s;"></div>
+
+<nav id="navbar">
+  <div class="nav-brand text-lg" id="navBrand">Muhammad Rahmadani</div>
+  <div class="desktop-menu">
+    <a href="#about" class="nav-glass-btn active">Tentang</a> 
+    <a href="#experience" class="nav-glass-btn">Pengalaman</a> 
+    <a href="#skills" class="nav-glass-btn">Skill</a> 
+    <a href="#portfolio" class="nav-glass-btn">Dokumen</a> 
+    <a href="#contact" class="nav-glass-btn">Kontak</a>
+  </div>
+  <div class="mobile-hamburger" id="hamburgerBtn">
+    <div class="hamburger-icon"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer-menu" id="drawerMenu">
+  <div class="drawer-header">
+    <span class="drawer-brand">M Rahmadani</span>
+    <div class="drawer-close" id="closeDrawerBtn">✕</div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <a href="#about" class="drawer-nav-item">Tentang</a> 
+    <a href="#experience" class="drawer-nav-item">Pengalaman</a> 
+    <a href="#skills" class="drawer-nav-item">Skill</a> 
+    <a href="#portfolio" class="drawer-nav-item">Dokumen</a> 
+    <a href="#contact" class="drawer-nav-item">Kontak</a>
+  </div>
+</div>
+
+<section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 relative">
+  
+  <div class="flex flex-col items-center max-w-4xl relative z-10 w-full">
+    
+    <div class="relative mb-10 group animate-float">
+      <div class="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition duration-500 pointer-events-none"></div>
+      <img src="foto_profil123.png" alt="Foto Profil" class="relative z-10 w-40 h-40 object-cover rounded-full border-2 border-white/20 shadow-2xl" onerror="this.src='https://via.placeholder.com/160?text=Profil'" />
+    </div>
+    
+    <div class="px-5 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm font-semibold text-blue-300 mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+      S. Kom • Rope Access Specialist
+    </div>
+    
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gradient leading-tight">
+      Muhammad Rahmadani
+    </h1>
+    
+    <p class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light">
+      Menggabungkan keahlian <span class="text-white font-medium">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class="text-blue-400 font-medium">Rope Access Technician</span>.
+    </p>
+  </div>
+
+  <div class="relative z-50 w-full flex justify-center mt-12 mb-8" id="cvButtonContainer">
+    <button onclick="openCVPreview()" class="btn-glow-primary">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+      <span>Preview CV</span>
+    </button>
+  </div>
+
+</section>
+
+<section id="about" class="py-24 max-w-5xl mx-auto px-6 reveal">
+  <div class="card p-8 md:p-12 border-l-4 border-l-blue-500 relative overflow-hidden group">
+    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition duration-700 pointer-events-none">
+      <svg class="w-40 h-40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white relative z-10">Profil <span class="text-accent">Singkat.</span></h2>
+    <p class="text-zinc-300 leading-relaxed text-lg mb-4 relative z-10">
+      Lulusan S1 Teknik Informatika dengan pengalaman kerja di bidang pekerjaan ketinggian (rope access & gondola) serta operasional lapangan. Memiliki sertifikasi TKPK dan BNSP Garuda jurusan Pemrograman, serta terbiasa bekerja sesuai standar K3, melakukan inspeksi, maintenance, dan perbaikan ringan.
+    </p>
+    <p class="text-zinc-400 leading-relaxed text-lg relative z-10">
+      Memiliki kemampuan adaptasi yang baik di berbagai lingkungan kerja, termasuk area berisiko tinggi, serta mampu belajar dengan cepat untuk memahami prosedur, alat, dan sistem kerja baru. Dikenal sebagai pribadi disiplin, bertanggung jawab, dan mampu bekerja secara tim maupun individu.
+    </p>
+  </div>
+</section>
+
+<section id="experience" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Jejak <span class="text-accent">Karir.</span></h2>
+    <p class="text-zinc-400">Pengalaman kerja profesional di berbagai sektor industri.</p>
+  </div>
+  
+  <div class="timeline-container">
+    
+    <div class="timeline-item left reveal delay-100">
+      <div class="timeline-dot-zz"></div>
+      <div class="card p-6 md:p-8 hover:border-blue-500/80">
+        <div class="inline-block px-3 py-1 bg-blue-900/30 rounded text-xs font-semibold text-blue-400 mb-3 border border-blue-500/20">Juni 2025 - April 2026</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Aeon Delight Indonesia</h3>
+        <p class="text-zinc-500 text-sm mb-4">Tim Proyek Area Jabodetabek</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
+          <li>Melaksanakan pekerjaan pembersihan dan perawatan gedung menggunakan metode rope access</li>
+          <li>Melakukan inspeksi area kerja pada ketinggian untuk memastikan keamanan dan kualitas pekerjaan</li>
+          <li>Mendukung operasional sebagai bagian dari Team Project Job area Jabodetabek</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item right reveal delay-200">
+      <div class="timeline-dot-zz" style="animation-delay: 0.5s; border-color: #60a5fa; box-shadow: 0 0 10px rgba(96,165,250,0.3);"></div>
+      <div class="card p-6 md:p-8 hover:border-blue-400/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-3 border border-zinc-700">Sept 2023 - Juni 2025</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Kharisma Potensia Indonesia</h3>
+        <p class="text-zinc-500 text-sm mb-4">Gondola Operator</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
+          <li>Mengoperasikan gondola untuk pekerjaan pembersihan kaca dan fasad gedung</li>
+          <li>Melakukan perawatan dan pengecekan peralatan kerja di ketinggian</li>
+          <li>Menerapkan standar keselamatan kerja (K3) dalam setiap aktivitas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item left reveal delay-300">
+      <div class="timeline-dot-zz" style="animation-delay: 1s; border-color: #9ca3af; box-shadow: none; animation: none;"></div>
+      <div class="card p-6 md:p-8 hover:border-zinc-500/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3">Jan 2022 - Mei 2023</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Warjali Suplai Pangan Indonesia</h3>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
+          <li>Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi</li>
+          <li>Membantu proses memasak dalam operasional dapur</li>
+          <li>Menjaga kebersihan dan higienitas area dapur</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item right reveal delay-100">
+      <div class="timeline-dot-zz" style="animation-delay: 1.5s; border-color: #71717a; box-shadow: none; animation: none;"></div>
+      <div class="card p-6 md:p-8 hover:border-zinc-600/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3">Juni 2021 - Jan 2022</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Bhakti Karya Distribusi</h3>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
+          <li>Melakukan penataan barang di area display toko</li>
+          <li>Mengelola dan merapikan stok barang di gudang</li>
+          <li>Melayani transaksi pelanggan sebagai kasir</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="skills" class="py-24 max-w-5xl mx-auto px-6">
+  <div class="grid md:grid-cols-2 gap-10">
+    <div class="reveal delay-100">
+      <h2 class="text-3xl font-bold text-white mb-6">Technical <span class="text-accent">Skills</span></h2>
+      <ul class="tags-container">
+        <li>Microsoft Office</li>
+        <li>Photoshop & Canva</li>
+        <li>Rope Access Equipment Handling</li>
+        <li>Inspection & Building Maintenance</li>
+        <li>Gondola Operation</li>
+        <li>IT Support & Troubleshooting</li>
+        <li>Windows OS</li>
+        <li>System Installation & Maintenance</li>
+      </ul>
+    </div>
+    <div class="reveal delay-200">
+      <h2 class="text-3xl font-bold text-white mb-6">Soft <span class="text-accent">Skills</span></h2>
+      <ul class="tags-container">
+        <li>Analytical & Logical Thinking</li>
+        <li>Technical Documentation</li>
+        <li>Teamwork & Communication</li>
+        <li>Discipline & Responsibility</li>
+        <li>High-Risk Environment Adaptability</li>
+        <li>Attention to Detail</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="py-24 bg-[#050505] relative border-y border-white/5 mt-10">
+  <div class="max-w-7xl mx-auto px-6 mb-10 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Sertifikasi & <span class="text-accent">Dokumen</span></h2>
+    <p class="text-zinc-500">Geser untuk melihat kredensial profesional.</p>
+  </div>
+  
+  <div class="horizontal-scroll-container" id="scrollContainer">
+    <div class="horizontal-scroll-wrapper">
+      
+      <div class="scroll-card card p-3 reveal delay-100" onclick="openModal(this)" data-title="SIO TKPK 1" data-img="sio.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="sio.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="SIO Gondola" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=SIO+TKPK+1'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">SIO TKPK 1</h3>
+          <p class="text-sm text-zinc-400 mt-1">Surat Izin Operasional Rope Access Level 1</p>
+        </div>
+      </div>
+
+      <div class="scroll-card card p-3 reveal delay-200" onclick="openModal(this)" data-title="Sertifikat Pelatihan TKPK 1" data-img="sertifikat.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="sertifikat.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Pelatihan" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+Training'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat Pelatihan</h3>
+          <p class="text-sm text-zinc-400 mt-1">Pelatihan Rope Access Level 1</p>
+        </div>
+      </div>
+
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this)" data-title="Sertifikat TOEFL" data-img="SERTIFIKAT_TOEFL.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="SERTIFIKAT_TOEFL.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Toefl" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+TOEFL'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat TOEFL</h3>
+          <p class="text-sm text-zinc-400 mt-1">Sertifikat hasil kompetensi bahasa Inggris</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-32 flex flex-col items-center justify-center text-center reveal px-6">
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">Mari <span class="text-accent">Terhubung.</span></h2>
+  <p class="text-zinc-400 text-lg mb-12 max-w-lg">Tertarik berdiskusi tentang peluang karir atau sekadar memperluas koneksi profesional?</p>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
+    <a href="https://wa.me/628977778684" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-green-500/20 group-hover:text-green-400 group-hover:border-green-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-green-400 transition">WhatsApp</span>
+    </a> 
+    
+    <a href="mailto:m.rahmadani.job@gmail.com" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 group-hover:text-blue-400 group-hover:border-blue-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-blue-400 transition">Email</span>
+    </a> 
+    
+    <a href="https://www.linkedin.com/in/bangdans08" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-[#0a66c2]/20 group-hover:text-[#0a66c2] group-hover:border-[#0a66c2]/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-[#0a66c2] transition">LinkedIn</span>
+    </a>
+    
+    <a href="https://instagram.com/BangDans8" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-pink-500/20 group-hover:text-pink-400 group-hover:border-pink-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-pink-400 transition">Instagram</span>
+    </a>
+  </div>
+</section>
+
+<div class="h-10"></div>
+
+<p>
+  <a id="floatingContact" href="#contact" class="fixed bottom-6 right-6 z-30">
+    <span id="floatingText">Let's Talk</span>
+    <svg id="floatingIcon" class="w-5 h-5 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </a>
+</p>
+
+<div id="cvModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8">
+  <div id="cvBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative p-4 md:p-6 flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
+    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container border border-white/5 rounded-2xl" id="cvScroll">
+      <img id="cvImg" src="CV_Muhammad-Rahmadani_page-Thumbnail.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="CV Preview" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=CV+Preview'" /> 
+      <button id="cvFloatingReset" class="floating-reset-btn">↺ Reset</button>
+    </div>
+    <div class="shrink-0 flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="zoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="zoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+      <div class="flex w-full sm:w-auto gap-3">
+        <a href="CV_Muhammad-Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
+        <button onclick="closeCVPreview()" class="flex-1 sm:flex-none bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-6 py-3 rounded-full transition-colors">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="modal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8">
+  <div class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative p-4 md:p-6 flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
+    <h3 id="modalTitle" class="shrink-0 text-xl md:text-2xl font-bold mb-4 text-center text-white tracking-wide"></h3>
+    <div id="modalScroll" class="flex-1 min-h-0 overflow-hidden relative modal-img-container border border-white/5 rounded-2xl group">
+      <img id="modalImg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="Dokumen" />
+      <button id="modalFloatingReset" class="floating-reset-btn">↺ Reset</button>
+      <button id="modalNavLeft" class="modal-nav-btn left">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button id="modalNavRight" class="modal-nav-btn right">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+    <div class="shrink-0 flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="modalZoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="modalZoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+      <button onclick="closeModal()" class="w-full sm:w-auto bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-8 py-3 rounded-full transition-colors">Tutup</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Data dokumen
+const docItems = Array.from(document.querySelectorAll('.scroll-card')).map(card => ({
+  title: card.getAttribute('data-title') || 'Dokumen',
+  imgSrc: card.querySelector('img')?.src || ''
+}));
+
+let currentDocIndex = 0;
+
+function updateModalContent(index) {
+  if (!docItems.length || index < 0 || index >= docItems.length) return;
+  const item = docItems[index];
+  const modalImg = document.getElementById('modalImg');
+  const modalTitle = document.getElementById('modalTitle');
+  if (modalImg) modalImg.src = item.imgSrc;
+  if (modalTitle) modalTitle.textContent = item.title;
+  resetModalTransform();
+}
+
+function resetModalTransform() {
+  modalScaleObj.value = 1; modalXObj.value = 0; modalYObj.value = 0;
+  updateModalTransform(); updateNavButtonsVisibility();
+}
+
+function nextDoc() { if (currentDocIndex + 1 < docItems.length) { currentDocIndex++; updateModalContent(currentDocIndex); } }
+function prevDoc() { if (currentDocIndex - 1 >= 0) { currentDocIndex--; updateModalContent(currentDocIndex); } }
+
+function updateNavButtonsVisibility() {
+  const leftBtn = document.getElementById('modalNavLeft');
+  const rightBtn = document.getElementById('modalNavRight');
+  if (!leftBtn || !rightBtn) return;
+  const isZoomedOrMoved = (modalScaleObj.value > 1.01 || modalScaleObj.value < 0.99) || (Math.abs(modalXObj.value) > 5) || (Math.abs(modalYObj.value) > 5);
+  const hasMultiple = docItems.length > 1;
+  if (!isZoomedOrMoved && hasMultiple) {
+    leftBtn.classList.add('visible'); rightBtn.classList.add('visible');
+    leftBtn.style.opacity = currentDocIndex === 0 ? '0.2' : '1';
+    rightBtn.style.opacity = currentDocIndex === docItems.length-1 ? '0.2' : '1';
+    leftBtn.style.pointerEvents = currentDocIndex === 0 ? 'none' : 'auto';
+    rightBtn.style.pointerEvents = currentDocIndex === docItems.length-1 ? 'none' : 'auto';
+  } else {
+    leftBtn.classList.remove('visible'); rightBtn.classList.remove('visible');
+  }
+}
+
+// ========== GLOBALS ==========
+let cvScaleObj = { value: 1 }, cvPosXObj = { value: 0 }, cvPosYObj = { value: 0 };
+let cvDragging = false, cvStartX = 0, cvStartY = 0;
+let modalScaleObj = { value: 1 }, modalXObj = { value: 0 }, modalYObj = { value: 0 };
+let modalDragging = false, modalStartX = 0, modalStartY = 0;
+
+function updateCVTransform() { 
+  const img = document.getElementById('cvImg'); 
+  if (img) img.style.transform = `translate(${cvPosXObj.value}px, ${cvPosYObj.value}px) scale(${cvScaleObj.value})`;
+  const resetBtn = document.getElementById('cvFloatingReset');
+  if (resetBtn) {
+    const isZoomed = (cvScaleObj.value > 1.01 || cvScaleObj.value < 0.99) || (Math.abs(cvPosXObj.value) > 5) || (Math.abs(cvPosYObj.value) > 5);
+    resetBtn.style.display = isZoomed ? "flex" : "none";
+  }
+}
+
+function updateModalTransform() { 
+  const img = document.getElementById('modalImg'); 
+  if (img) img.style.transform = `translate(${modalXObj.value}px, ${modalYObj.value}px) scale(${modalScaleObj.value})`;
+  const resetBtn = document.getElementById('modalFloatingReset');
+  if (resetBtn) {
+    const isZoomed = (modalScaleObj.value > 1.01 || modalScaleObj.value < 0.99) || (Math.abs(modalXObj.value) > 5) || (Math.abs(modalYObj.value) > 5);
+    resetBtn.style.display = isZoomed ? "flex" : "none";
+  }
+  updateNavButtonsVisibility();
+}
+
+function initCVDrag() {
+  const container = document.getElementById('cvScroll');
+  if (!container) return;
+  const startDrag = (clientX, clientY) => { cvDragging = true; cvStartX = clientX - cvPosXObj.value; cvStartY = clientY - cvPosYObj.value; };
+  container.addEventListener('mousedown', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('button')) return; e.preventDefault(); startDrag(e.clientX, e.clientY); container.classList.add('cursor-grabbing'); });
+  window.addEventListener('mouseup', () => { cvDragging = false; container.classList.remove('cursor-grabbing'); });
+  window.addEventListener('mousemove', (e) => { if (!cvDragging) return; cvPosXObj.value = e.clientX - cvStartX; cvPosYObj.value = e.clientY - cvStartY; updateCVTransform(); });
+  container.addEventListener('touchstart', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('button')) return; if (e.touches.length === 1) { e.preventDefault(); startDrag(e.touches[0].clientX, e.touches[0].clientY); } });
+  window.addEventListener('touchmove', (e) => { if (cvDragging && e.touches.length === 1) { cvPosXObj.value = e.touches[0].clientX - cvStartX; cvPosYObj.value = e.touches[0].clientY - cvStartY; updateCVTransform(); e.preventDefault(); } }, {passive: false});
+  window.addEventListener('touchend', () => { cvDragging = false; });
+  container.addEventListener('wheel', (e) => { e.preventDefault(); cvScaleObj.value = Math.min(Math.max(cvScaleObj.value + (e.deltaY < 0 ? 0.1 : -0.1), 0.5), 4); updateCVTransform(); }, {passive: false});
+}
+
+function initModalEvents() {
+  const container = document.getElementById('modalScroll');
+  if (!container) return;
+  const startDrag = (clientX, clientY) => { modalDragging = true; modalStartX = clientX - modalXObj.value; modalStartY = clientY - modalYObj.value; };
+  container.addEventListener('mousedown', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('.modal-nav-btn')) return; e.preventDefault(); startDrag(e.clientX, e.clientY); container.classList.add('cursor-grabbing'); });
+  window.addEventListener('mouseup', () => { modalDragging = false; container.classList.remove('cursor-grabbing'); });
+  window.addEventListener('mousemove', (e) => { if (!modalDragging) return; modalXObj.value = e.clientX - modalStartX; modalYObj.value = e.clientY - modalStartY; updateModalTransform(); });
+  container.addEventListener('touchstart', (e) => { if (e.target.closest('.floating-reset-btn') || e.target.closest('.modal-nav-btn')) return; if (e.touches.length === 1) { e.preventDefault(); startDrag(e.touches[0].clientX, e.touches[0].clientY); } });
+  window.addEventListener('touchmove', (e) => { if (modalDragging && e.touches.length === 1) { modalXObj.value = e.touches[0].clientX - modalStartX; modalYObj.value = e.touches[0].clientY - modalStartY; updateModalTransform(); e.preventDefault(); } }, {passive: false});
+  window.addEventListener('touchend', () => { modalDragging = false; });
+  container.addEventListener('wheel', (e) => { e.preventDefault(); modalScaleObj.value = Math.min(Math.max(modalScaleObj.value + (e.deltaY < 0 ? 0.1 : -0.1), 0.5), 4); updateModalTransform(); }, {passive: false});
+}
+
+function modalZoomIn() { modalScaleObj.value = Math.min(modalScaleObj.value + 0.1, 4); updateModalTransform(); }
+function modalZoomOut() { modalScaleObj.value = Math.max(modalScaleObj.value - 0.1, 0.5); updateModalTransform(); }
+function zoomIn() { cvScaleObj.value = Math.min(cvScaleObj.value + 0.1, 4); updateCVTransform(); }
+function zoomOut() { cvScaleObj.value = Math.max(cvScaleObj.value - 0.1, 0.5); updateCVTransform(); }
+function resetZoomCV() { cvScaleObj.value = 1; cvPosXObj.value = 0; cvPosYObj.value = 0; updateCVTransform(); }
+
+function openCVPreview() {
+  document.getElementById('cvModal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  resetZoomCV();
+  gsap.from("#cvBox", { scale: 0.9, y: 30, opacity: 0, duration: 0.5, ease: "back.out(1.2)" });
+  gsap.from("#cvImg", { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2, ease: "power3.out" });
+}
+function closeCVPreview() { document.getElementById('cvModal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+window.openModal = function(el) {
+  const clickedImg = el.querySelector('img');
+  const imgSrc = clickedImg ? clickedImg.src : '';
+  const foundIndex = docItems.findIndex(item => item.imgSrc === imgSrc);
+  currentDocIndex = foundIndex !== -1 ? foundIndex : 0;
+  updateModalContent(currentDocIndex);
+  document.getElementById('modal').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  gsap.from("#modal > div", { scale: 0.9, y: 30, opacity: 0, duration: 0.5, ease: "back.out(1.2)" });
+  gsap.from("#modalImg", { scale: 0.8, opacity: 0, duration: 0.6, delay: 0.2, ease: "power3.out" });
+};
+
+function closeModal() { document.getElementById('modal').classList.add('hidden'); document.body.style.overflow = 'auto'; }
+
+function initPinchZoom(elementId, scaleObj, xObj, yObj, updateFn) {
+  const container = document.getElementById(elementId);
+  if (!container) return;
+  let initialDistance = 0, initialScale = 1, initialX = 0, initialY = 0;
+  const getDistance = (touches) => Math.hypot(touches[0].clientX - touches[1].clientX, touches[0].clientY - touches[1].clientY);
+  const getCenter = (touches) => ({ x: (touches[0].clientX + touches[1].clientX) / 2, y: (touches[0].clientY + touches[1].clientY) / 2 });
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault(); initialDistance = getDistance(e.touches); initialScale = scaleObj.value;
+      const center = getCenter(e.touches); initialX = center.x; initialY = center.y;
+    }
+  }, {passive: false});
+  container.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault(); const newDistance = getDistance(e.touches);
+      let newScale = initialScale * (newDistance / initialDistance);
+      newScale = Math.min(Math.max(newScale, 0.5), 4); scaleObj.value = newScale;
+      const newCenter = getCenter(e.touches);
+      xObj.value += newCenter.x - initialX; yObj.value += newCenter.y - initialY;
+      initialX = newCenter.x; initialY = newCenter.y; initialScale = scaleObj.value; updateFn();
+    }
+  }, {passive: false});
+}
+
+document.getElementById('modalNavLeft')?.addEventListener('click', (e) => { e.stopPropagation(); prevDoc(); });
+document.getElementById('modalNavRight')?.addEventListener('click', (e) => { e.stopPropagation(); nextDoc(); });
+document.getElementById('modalFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetModalTransform(); });
+document.getElementById('cvFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetZoomCV(); });
+
+const navBrand = document.getElementById('navBrand');
+if (navBrand) navBrand.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+const hamburgerBtn = document.getElementById('hamburgerBtn'), drawerOverlay = document.getElementById('drawerOverlay'), drawerMenu = document.getElementById('drawerMenu'), closeDrawerBtn = document.getElementById('closeDrawerBtn'), drawerLinks = document.querySelectorAll('.drawer-nav-item');
+function openDrawer() { drawerMenu.classList.add('open'); drawerOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+function closeDrawer() { drawerMenu.classList.remove('open'); drawerOverlay.classList.remove('active'); document.body.style.overflow = 'auto'; }
+if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+drawerLinks.forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const targetId = link.getAttribute('href').substring(1); const targetSection = document.getElementById(targetId); if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' }); closeDrawer(); }); });
+
+const sections = document.querySelectorAll("section[id]"), glassBtns = document.querySelectorAll(".nav-glass-btn");
+function setActiveNav() { 
+  let current = ""; const scrollPos = window.scrollY + 200; 
+  sections.forEach(section => { const top = section.offsetTop, bottom = top + section.offsetHeight; if (scrollPos >= top && scrollPos < bottom) current = section.id; }); 
+  glassBtns.forEach(btn => { btn.classList.remove("active"); if (btn.getAttribute("href") === `#${current}`) btn.classList.add("active"); }); 
+  drawerLinks.forEach(link => { link.classList.remove("active"); if (link.getAttribute("href") === `#${current}`) link.classList.add("active"); }); 
+}
+window.addEventListener("scroll", setActiveNav); window.addEventListener("load", setActiveNav);
+
+const revealElements = document.querySelectorAll('.reveal');
+function checkReveal() { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('revealed'); }); }
+window.addEventListener('scroll', checkReveal); window.addEventListener('load', checkReveal);
+
+const scrollContainer = document.getElementById('scrollContainer');
+if(scrollContainer){ 
+  let isDown=false,startX,scrollLeft; 
+  scrollContainer.addEventListener('mousedown',(e)=>{isDown=true; scrollContainer.style.cursor='grabbing'; startX=e.pageX-scrollContainer.offsetLeft; scrollLeft=scrollContainer.scrollLeft;}); 
+  scrollContainer.addEventListener('mouseleave',()=>{isDown=false; scrollContainer.style.cursor='grab';}); 
+  scrollContainer.addEventListener('mouseup',()=>{isDown=false; scrollContainer.style.cursor='grab';}); 
+  scrollContainer.addEventListener('mousemove',(e)=>{if(!isDown) return; e.preventDefault(); const x=e.pageX-scrollContainer.offsetLeft; const walk=(x-startX)*1.5; scrollContainer.scrollLeft=scrollLeft-walk;}); 
+  scrollContainer.style.cursor='grab';
+}
+
+const floatingBtn = document.getElementById("floatingContact"), floatingText = document.getElementById("floatingText"), floatingIcon = document.getElementById("floatingIcon"), contactSection = document.getElementById("contact");
+function updateFloatingButton() { 
+  if (!contactSection) return; 
+  const rect = contactSection.getBoundingClientRect(); 
+  const isVisible = rect.top <= window.innerHeight - 100 && rect.bottom >= 100; 
+  if (isVisible) { 
+    if (floatingText.style.display !== "none") { floatingText.style.display = "none"; floatingIcon.style.display = "block"; floatingBtn.setAttribute("href", "#hero"); } 
+  } else { 
+    if (floatingText.style.display !== "inline-block") { floatingText.style.display = "inline-block"; floatingIcon.style.display = "none"; floatingBtn.setAttribute("href", "#contact"); } 
+  } 
+}
+window.addEventListener("scroll", updateFloatingButton); window.addEventListener("resize", updateFloatingButton); updateFloatingButton();
+
+// Init Animations
+document.addEventListener("DOMContentLoaded", () => {
+  initCVDrag(); initModalEvents();
+  initPinchZoom('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform);
+  initPinchZoom('modalScroll', modalScaleObj, modalXObj, modalYObj, updateModalTransform);
+  
+  // Custom hero entry animation
+  gsap.from("#navbar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
+  gsap.from("#hero img", { scale: 0.5, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.2 });
+  gsap.from("#hero .bg-blue-900\\/30", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.4 });
+  gsap.from("#hero h1", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.5 });
+  gsap.from("#hero p", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.6 });
+  
+  // Animasi Tombol CV
+  gsap.from("#cvButtonContainer", { scale: 0.5, y: 30, opacity: 0, duration: 1, ease: "elastic.out(1, 0.7)", delay: 0.8 });
+  
+  // Particle entry
+  gsap.from(".particle", { scale: 0, opacity: 0, duration: 2, stagger: 0.2, delay: 1 });
+  
+  checkReveal(); updateNavButtonsVisibility();
+});
+</script>
+</body>
+</html>

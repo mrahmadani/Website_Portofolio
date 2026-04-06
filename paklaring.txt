@@ -1,0 +1,6 @@
+<div class="scroll-card card overflow-hidden" onclick="openModal(this)" data-title="Paklaring Pekerjaan Terakhir" data-img="paklaring.jpg"><img src="paklaring.jpg" class="w-full h-[400px] object-cover" alt="Paklaring" onerror="this.src='https://placehold.co/600x400?text=Paklaring'" />
+<div class="p-4 text-center">
+<h3 class="font-semibold text-lg">Paklaring</h3>
+<p class="text-sm text-gray-500 mt-1">Paklaring Pekerjaan Terakhir</p>
+</div>
+</div>
