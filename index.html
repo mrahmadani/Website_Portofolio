@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>Portofolio</title>
+<title>Portofolio - Muhammad Rahmadani</title>
 <link rel="icon" type="image/png" href="favicon123.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -159,17 +159,6 @@ nav {
 }
 .card:hover { transform: translateY(-8px); border-color: rgba(59, 130, 246, 0.4); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15); }
 
-/* Skills Tags UX */
-ul.tags-container { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
-ul.tags-container li {
-  background: #27272a; border: 1px solid #3f3f46; color: #d4d4d8; padding: 8px 16px; border-radius: 100px;
-  font-size: 0.9rem; font-weight: 500; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-ul.tags-container li:hover {
-  background: #3f3f46; border-color: #60a5fa; color: #fff;
-  transform: scale(1.1) translateY(-2px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
-}
-
 /* Scroll Container */
 .horizontal-scroll-container {
   overflow-x: auto; overflow-y: hidden; white-space: nowrap; padding: 20px 20px 60px 20px; cursor: grab; scroll-behavior: smooth;
@@ -191,10 +180,7 @@ ul.tags-container li:hover {
 
 /* ========== TIMELINE ZIG ZAG ========== */
 .timeline-container {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
+  position: relative; max-width: 1000px; margin: 0 auto; padding: 20px 0;
 }
 /* Glowing Center Line */
 .timeline-container::after {
@@ -321,22 +307,18 @@ ul.tags-container li:hover {
 <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 relative">
   
   <div class="flex flex-col items-center max-w-4xl relative z-10 w-full">
-    
     <div class="relative mb-10 group animate-float">
       <div class="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition duration-500 pointer-events-none"></div>
       <img src="foto_profil123.png" alt="Foto Profil" class="relative z-10 w-40 h-40 object-cover rounded-full border-2 border-white/20 shadow-2xl" onerror="this.src='https://via.placeholder.com/160?text=Profil'" />
     </div>
-    
     <div class="px-5 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm font-semibold text-blue-300 mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(59,130,246,0.3)]">
       S. Kom • Rope Access Specialist
     </div>
-    
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gradient leading-tight">
       Muhammad Rahmadani
     </h1>
-    
     <p class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light">
-      Menggabungkan keahlian <span class="text-white font-medium">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class="text-blue-400 font-medium">Rope Access Technician</span>.
+      Menggabungkan keahlian <span class="text-white font-medium">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class="text-blue-400 font-medium">Akses Tali & Gondola</span>.
     </p>
   </div>
 
@@ -346,7 +328,6 @@ ul.tags-container li:hover {
       <span>Preview CV</span>
     </button>
   </div>
-
 </section>
 
 <section id="about" class="py-24 max-w-5xl mx-auto px-6 reveal">
@@ -405,7 +386,7 @@ ul.tags-container li:hover {
       <div class="card p-6 md:p-8 hover:border-zinc-500/50">
         <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3">Jan 2022 - Mei 2023</div>
         <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Warjali Suplai Pangan Indonesia</h3>
-        <p class="text-zinc-500 text-sm mb-4">Helper Cook</p>
+        <p class="text-zinc-500 text-sm mb-4">Cook Helper</p>
         <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
           <li>Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi</li>
           <li>Membantu proses memasak dalam operasional dapur</li>
@@ -431,32 +412,101 @@ ul.tags-container li:hover {
   </div>
 </section>
 
-<section id="skills" class="py-24 max-w-5xl mx-auto px-6">
-  <div class="grid md:grid-cols-2 gap-10">
-    <div class="reveal delay-100">
-      <h2 class="text-3xl font-bold text-white mb-6">Technical <span class="text-accent">Skills</span></h2>
-      <ul class="tags-container">
-        <li>Microsoft Office</li>
-        <li>Photoshop & Canva</li>
-        <li>Rope Access Equipment Handling</li>
-        <li>Inspection & Building Maintenance</li>
-        <li>Gondola Operation</li>
-        <li>IT Support & Troubleshooting</li>
-        <li>Windows OS</li>
-        <li>System Installation & Maintenance</li>
+<section id="skills" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Kompetensi & <span class="text-accent">Keahlian.</span></h2>
+    <p class="text-zinc-400">Keahlian teknis dan interpersonal.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <div class="card p-8 reveal delay-100 group border-t-4 border-t-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6">Operasional <span class="text-blue-400">Lapangan</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Rope Access Equipment Handling</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Gondola Operation</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Inspection & Building Maintenance</span>
+        </li>
       </ul>
     </div>
-    <div class="reveal delay-200">
-      <h2 class="text-3xl font-bold text-white mb-6">Soft <span class="text-accent">Skills</span></h2>
-      <ul class="tags-container">
-        <li>Analytical & Logical Thinking</li>
-        <li>Technical Documentation</li>
-        <li>Teamwork & Communication</li>
-        <li>Discipline & Responsibility</li>
-        <li>High-Risk Environment Adaptability</li>
-        <li>Attention to Detail</li>
+
+    <div class="card p-8 reveal delay-200 group border-t-4 border-t-indigo-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6">IT & <span class="text-indigo-400">Sistem</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>IT Support & Troubleshooting</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Windows OS Environment</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>System Installation & Maintenance</span>
+        </li>
       </ul>
     </div>
+
+    <div class="card p-8 reveal delay-300 group border-t-4 border-t-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6">Software & <span class="text-emerald-400">Tools</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Microsoft Office</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Adobe Photoshop & Canva</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>Technical Documentation</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card p-8 reveal delay-100 group border-l-4 border-l-purple-500 lg:col-span-3 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] overflow-hidden relative mt-2">
+      <div class="absolute -right-4 -top-4 opacity-[0.03] group-hover:opacity-[0.08] group-hover:rotate-12 transition duration-700 pointer-events-none">
+        <svg class="w-64 h-64 text-purple-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+      </div>
+      
+      <div class="flex flex-col md:flex-row md:items-center gap-6 mb-8 relative z-10 border-b border-white/5 pb-6">
+         <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-purple-500/20 transition duration-300">
+          <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-1">Soft Skills & <span class="text-purple-400">Interpersonal</span></h3>
+          <p class="text-zinc-500 text-sm">Kemampuan adaptasi dan manajemen kerja dalam lingkungan dinamis.</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap gap-3 md:gap-4 relative z-10">
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Analytical & Logical Thinking</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Teamwork & Communication</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Discipline & Responsibility</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">High-Risk Environment Adaptability</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Attention to Detail</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -550,7 +600,7 @@ ul.tags-container li:hover {
 <div id="cvModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8">
   <div id="cvBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative p-4 md:p-6 flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)]">
     <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container border border-white/5 rounded-2xl" id="cvScroll">
-      <img id="cvImg" src="CV github_page-0001.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="CV Preview" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=CV+Preview'" /> 
+      <img id="cvImg" src="CV_Muhammad-Rahmadani_page-Thumbnail.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="CV Preview" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=CV+Preview'" /> 
       <button id="cvFloatingReset" class="floating-reset-btn">↺ Reset</button>
     </div>
     <div class="shrink-0 flex flex-col sm:flex-row justify-between items-center mt-6 gap-4">
@@ -559,7 +609,7 @@ ul.tags-container li:hover {
         <button onclick="zoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
       </div>
       <div class="flex w-full sm:w-auto gap-3">
-        <a href="CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
+        <a href="CV_Muhammad-Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-6 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
         <button onclick="closeCVPreview()" class="flex-1 sm:flex-none bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-6 py-3 rounded-full transition-colors">Tutup</button>
       </div>
     </div>
@@ -584,13 +634,12 @@ ul.tags-container li:hover {
         <button onclick="modalZoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
         <button onclick="modalZoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
       </div>
-      <button onclick="closeModal()" class="w-full sm:w-auto bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-8 py-3 rounded-full transition-colors">Tutup</button>
+      <button onclick="closeModal()" class="w-full sm:w-auto bg-[#27272a] hover:bg-[#3f3f46] border border-white/10 text-white font-bold px-8 py-3 rounded-full transition-colors">Tutup Modal</button>
     </div>
   </div>
 </div>
 
 <script>
-// Data dokumen
 const docItems = Array.from(document.querySelectorAll('.scroll-card')).map(card => ({
   title: card.getAttribute('data-title') || 'Dokumen',
   imgSrc: card.querySelector('img')?.src || ''
@@ -633,7 +682,6 @@ function updateNavButtonsVisibility() {
   }
 }
 
-// ========== GLOBALS ==========
 let cvScaleObj = { value: 1 }, cvPosXObj = { value: 0 }, cvPosYObj = { value: 0 };
 let cvDragging = false, cvStartX = 0, cvStartY = 0;
 let modalScaleObj = { value: 1 }, modalXObj = { value: 0 }, modalYObj = { value: 0 };
@@ -796,7 +844,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPinchZoom('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform);
   initPinchZoom('modalScroll', modalScaleObj, modalXObj, modalYObj, updateModalTransform);
   
-  // Custom hero entry animation
   gsap.from("#navbar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
   gsap.from("#hero img", { scale: 0.5, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.2 });
   gsap.from("#hero .bg-blue-900\\/30", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.4 });
@@ -806,7 +853,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animasi Tombol CV
   gsap.from("#cvButtonContainer", { scale: 0.5, y: 30, opacity: 0, duration: 1, ease: "elastic.out(1, 0.7)", delay: 0.8 });
   
-  // Particle entry
   gsap.from(".particle", { scale: 0, opacity: 0, duration: 2, stagger: 0.2, delay: 1 });
   
   checkReveal(); updateNavButtonsVisibility();
