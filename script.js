@@ -1,7 +1,7 @@
 // ========== BAHASA TRANSLATIONS ==========
 const translations = {
   id: {
-    nav_about: "Tentang", nav_experience: "Pengalaman", nav_education: "Pendidikan", nav_skills: "Skill", nav_documents: "Dokumen", nav_contact: "Kontak",
+    nav_about: "Tentang", nav_experience: "Pengalaman", nav_education: "Pendidikan", nav_skills: "Skill", nav_project: "Pekerjaan", nav_documents: "Dokumen", nav_contact: "Kontak",
     hero_badge: "S. Kom • Rope Access Specialist",
     hero_desc: "Menggabungkan keahlian <span class=\"text-white font-medium\">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class=\"text-blue-400 font-medium\">Rope Access Technician</span>.",
     preview_cv_btn: "Preview CV",
@@ -39,7 +39,7 @@ const translations = {
     pkm_modal_title: "Sertifikat Pengabdian Masyarakat", pkm_modal_subtitle: "SMAN 8 Kota Tangerang Selatan"
   },
   en: {
-    nav_about: "About", nav_experience: "Experience", nav_education: "Education", nav_skills: "Skills", nav_documents: "Documents", nav_contact: "Contact",
+    nav_about: "About", nav_experience: "Experience", nav_education: "Education", nav_skills: "Skills", nav_project: "Project", nav_documents: "Documents", nav_contact: "Contact",
     hero_badge: "S. Kom • Rope Access Specialist",
     hero_desc: "Combining <span class=\"text-white font-medium\">Informatics Engineering</span> expertise with field operational resilience as a <span class=\"text-blue-400 font-medium\">Rope Access Technician</span> specialist.",
     preview_cv_btn: "Preview CV",
