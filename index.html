@@ -80,6 +80,7 @@ nav {
   padding: 10px 24px !important; z-index: 90; 
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   display: flex !important; justify-content: space-between !important; align-items: center !important;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-glass-btn {
@@ -93,6 +94,24 @@ nav {
 }
 .nav-brand { font-weight: 700; color: #fff; letter-spacing: 0.5px; cursor: pointer; transition: transform 0.3s ease; }
 .nav-brand:hover { transform: scale(1.05); }
+
+/* Language Switch Button */
+.lang-switch {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #60a5fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+.lang-switch:hover {
+  background: rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px);
+}
 
 /* ========== DRAWER MENU (MOBILE) ========== */
 .drawer-overlay {
@@ -130,6 +149,7 @@ nav {
   .desktop-menu { display: none !important; }
   .mobile-hamburger { display: flex !important; }
   nav { top: 1rem; width: 92%; padding: 12px 20px !important; }
+  .lang-switch { margin-left: 0; }
 }
 
 /* ========== HERO ANIMATIONS ========== */
@@ -283,6 +303,261 @@ nav {
 /* Typography Gradients */
 .text-gradient { background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .text-accent { color: #60a5fa; text-shadow: 0 0 20px rgba(96, 165, 250, 0.4); }
+    
+/* ========== PROJECT PORTFOLIO STYLES ========== */
+.project-card {
+  background: #18181b;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+.project-img-container {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-category {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin-bottom: 12px;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #27272a;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #a1a1aa;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* Project Modal */
+#projectModal .modal-img-container {
+  min-height: 300px;
+  max-height: 50vh;
+}
+
+#projectModalImg {
+  max-width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.project-modal-content {
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.project-modal-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.project-modal-content::-webkit-scrollbar-track {
+  background: #27272a;
+  border-radius: 10px;
+}
+
+.project-modal-content::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+    
+    /* Video Wrapper & Player Styles */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-height: 50vh;
+  object-fit: contain;
+  background: #000;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  padding: 12px 16px;
+  display: flex;
+align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover .video-controls {
+  opacity: 1;
+}
+
+.video-controls button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.video-controls button:hover {
+  background: rgba(59, 130, 246, 0.8);
+  transform: scale(1.1);
+}
+
+.video-controls button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.video-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.video-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 10px;
+  transition: width 0.1s linear;
+}
+
+.video-time {
+  color: white;
+  font-size: 12px;
+  font-family: monospace;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-slider {
+  width: 60px;
+  height: 4px;
+  -webkit-appearance: none;
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b82f6;
+  cursor: pointer;
+}
+
+/* Tab selector untuk foto/video */
+.media-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 8px;
+}
+
+.media-tab {
+  padding: 8px 20px;
+  background: transparent;
+  border: none;
+  color: #a1a1aa;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 100px;
+}
+
+.media-tab.active {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.media-tab:hover:not(.active) {
+  color: white;
+  background: rgba(255,255,255,0.05);
+}
+
+.media-content {
+  display: none;
+}
+
+.media-content.active {
+  display: block;
+}
+    
 </style>
 </head>
 <body>
@@ -294,12 +569,13 @@ nav {
 <nav id="navbar">
   <div class="nav-brand text-lg" id="navBrand">Muhammad Rahmadani</div>
   <div class="desktop-menu">
-    <a href="#about" class="nav-glass-btn active">Tentang</a> 
-    <a href="#experience" class="nav-glass-btn">Pengalaman</a> 
-    <a href="#education" class="nav-glass-btn">Pendidikan</a> 
-    <a href="#skills" class="nav-glass-btn">Skill</a> 
-    <a href="#portfolio" class="nav-glass-btn">Dokumen</a> 
-    <a href="#contact" class="nav-glass-btn">Kontak</a>
+    <a href="#about" class="nav-glass-btn" data-key="nav_about">Tentang</a> 
+    <a href="#experience" class="nav-glass-btn" data-key="nav_experience">Pengalaman</a> 
+    <a href="#education" class="nav-glass-btn" data-key="nav_education">Pendidikan</a> 
+    <a href="#skills" class="nav-glass-btn" data-key="nav_skills">Skill</a> 
+    <a href="#portfolio" class="nav-glass-btn" data-key="nav_documents">Dokumen</a> 
+    <a href="#contact" class="nav-glass-btn" data-key="nav_contact">Kontak</a>
+    <button id="langSwitchBtn" class="lang-switch">EN</button>
   </div>
   <div class="mobile-hamburger" id="hamburgerBtn">
     <div class="hamburger-icon"><span></span><span></span><span></span></div>
@@ -313,12 +589,13 @@ nav {
     <div class="drawer-close" id="closeDrawerBtn">✕</div>
   </div>
   <div class="flex flex-col gap-2">
-    <a href="#about" class="drawer-nav-item">Tentang</a> 
-    <a href="#experience" class="drawer-nav-item">Pengalaman</a> 
-    <a href="#education" class="drawer-nav-item">Pendidikan</a> 
-    <a href="#skills" class="drawer-nav-item">Skill</a> 
-    <a href="#portfolio" class="drawer-nav-item">Dokumen</a> 
-    <a href="#contact" class="drawer-nav-item">Kontak</a>
+    <a href="#about" class="drawer-nav-item" data-key="nav_about">Tentang</a> 
+    <a href="#experience" class="drawer-nav-item" data-key="nav_experience">Pengalaman</a> 
+    <a href="#education" class="drawer-nav-item" data-key="nav_education">Pendidikan</a> 
+    <a href="#skills" class="drawer-nav-item" data-key="nav_skills">Skill</a> 
+    <a href="#portfolio" class="drawer-nav-item" data-key="nav_documents">Dokumen</a> 
+    <a href="#contact" class="drawer-nav-item" data-key="nav_contact">Kontak</a>
+    <button id="drawerLangSwitchBtn" class="lang-switch mt-4 w-fit">EN</button>
   </div>
 </div>
 
@@ -329,13 +606,13 @@ nav {
       <div class="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition duration-500 pointer-events-none"></div>
       <img src="foto_profil123.png" alt="Foto Profil" class="relative z-10 w-40 h-40 object-cover rounded-full border-2 border-white/20 shadow-2xl" onerror="this.src='https://via.placeholder.com/160?text=Profil'" />
     </div>
-    <div class="px-5 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm font-semibold text-blue-300 mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+    <div class="px-5 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm font-semibold text-blue-300 mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(59,130,246,0.3)]" data-key="hero_badge">
       S. Kom • Rope Access Specialist
     </div>
     <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gradient leading-tight">
       Muhammad Rahmadani
     </h1>
-    <h2 class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light">
+    <h2 class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light" data-key="hero_desc">
       Menggabungkan keahlian <span class="text-white font-medium">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class="text-blue-400 font-medium">Rope Access Technician</span>.
     </h2>
   </div>
@@ -343,7 +620,7 @@ nav {
   <div class="relative z-50 w-full flex justify-center mt-12 mb-8" id="cvButtonContainer">
     <button onclick="openCVPreview()" class="btn-glow-primary">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-      <span>Preview CV</span>
+      <span data-key="preview_cv_btn">Preview CV</span>
     </button>
   </div>
 </section>
@@ -353,11 +630,11 @@ nav {
     <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition duration-700 pointer-events-none">
       <svg class="w-40 h-40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
     </div>
-    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white relative z-10">Profil <span class="text-accent">Singkat.</span></h2>
-    <p class="text-zinc-300 leading-relaxed text-lg mb-4 relative z-10">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white relative z-10"><span data-key="about_title">Profil</span> <span class="text-accent" data-key="about_title_accent">Singkat.</span></h2>
+    <p class="text-zinc-300 leading-relaxed text-lg mb-4 relative z-10" data-key="about_text_1">
       Lulusan S1 Teknik Informatika dengan pengalaman kerja di bidang pekerjaan ketinggian (rope access & gondola) serta operasional lapangan. Memiliki sertifikasi TKPK dan BNSP Garuda jurusan Pemrograman, serta terbiasa bekerja sesuai standar K3, melakukan inspeksi, maintenance, dan perbaikan ringan.
     </p>
-    <p class="text-zinc-400 leading-relaxed text-lg relative z-10">
+    <p class="text-zinc-400 leading-relaxed text-lg relative z-10" data-key="about_text_2">
       Memiliki kemampuan adaptasi yang baik di berbagai lingkungan kerja, termasuk area berisiko tinggi, serta mampu belajar dengan cepat untuk memahami prosedur, alat, dan sistem kerja baru. Dikenal sebagai pribadi disiplin, bertanggung jawab, dan mampu bekerja secara tim maupun individu.
     </p>
   </div>
@@ -365,8 +642,8 @@ nav {
 
 <section id="experience" class="py-24 max-w-6xl mx-auto px-6">
   <div class="mb-16 reveal text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Jejak <span class="text-accent">Karir.</span></h2>
-    <p class="text-zinc-400">Pengalaman kerja profesional di berbagai sektor industri.</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="exp_title">Jejak</span> <span class="text-accent" data-key="exp_title_accent">Karir.</span></h2>
+    <p class="text-zinc-400" data-key="exp_subtitle">Pengalaman kerja profesional di berbagai sektor industri.</p>
   </div>
   
   <div class="timeline-container">
@@ -374,13 +651,13 @@ nav {
     <div class="timeline-item left reveal delay-100">
       <div class="timeline-dot-zz"></div>
       <div class="card p-6 md:p-8 hover:border-blue-500/80">
-        <div class="inline-block px-3 py-1 bg-blue-900/30 rounded text-xs font-semibold text-blue-400 mb-3 border border-blue-500/20">Juni 2025 - April 2026</div>
+        <div class="inline-block px-3 py-1 bg-blue-900/30 rounded text-xs font-semibold text-blue-400 mb-3 border border-blue-500/20" data-key="exp1_date">Juni 2025 - April 2026</div>
         <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Aeon Delight Indonesia</h3>
-        <p class="text-zinc-500 text-sm mb-4">Rope Access</p>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp1_position">Rope Access</p>
         <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
-          <li>Melaksanakan pekerjaan pembersihan dan perawatan gedung menggunakan metode rope access</li>
-          <li>Melakukan inspeksi area kerja pada ketinggian untuk memastikan keamanan dan kualitas pekerjaan</li>
-          <li>Mendukung operasional sebagai bagian dari Team Project Job area Jabodetabek</li>
+          <li data-key="exp1_desc1">Melaksanakan pekerjaan pembersihan dan perawatan gedung menggunakan metode rope access</li>
+          <li data-key="exp1_desc2">Melakukan inspeksi area kerja pada ketinggian untuk memastikan keamanan dan kualitas pekerjaan</li>
+          <li data-key="exp1_desc3">Mendukung operasional sebagai bagian dari Team Project Job area Jabodetabek</li>
         </ul>
       </div>
     </div>
@@ -388,13 +665,13 @@ nav {
     <div class="timeline-item right reveal delay-200">
       <div class="timeline-dot-zz" style="animation-delay: 0.5s; border-color: #60a5fa; box-shadow: 0 0 10px rgba(96,165,250,0.3);"></div>
       <div class="card p-6 md:p-8 hover:border-blue-400/50">
-        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-3 border border-zinc-700">Sept 2023 - Juni 2025</div>
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-3 border border-zinc-700" data-key="exp2_date">Sept 2023 - Juni 2025</div>
         <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Kharisma Potensia Indonesia</h3>
-        <p class="text-zinc-500 text-sm mb-4">Gondola Operator</p>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp2_position">Gondola Operator</p>
         <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
-          <li>Mengoperasikan gondola untuk pekerjaan pembersihan kaca dan fasad gedung</li>
-          <li>Melakukan perawatan dan pengecekan peralatan kerja di ketinggian</li>
-          <li>Menerapkan standar keselamatan kerja (K3) dalam setiap aktivitas</li>
+          <li data-key="exp2_desc1">Mengoperasikan gondola untuk pekerjaan pembersihan kaca dan fasad gedung</li>
+          <li data-key="exp2_desc2">Melakukan perawatan dan pengecekan peralatan kerja di ketinggian</li>
+          <li data-key="exp2_desc3">Menerapkan standar keselamatan kerja (K3) dalam setiap aktivitas</li>
         </ul>
       </div>
     </div>
@@ -402,13 +679,13 @@ nav {
     <div class="timeline-item left reveal delay-300">
       <div class="timeline-dot-zz" style="animation-delay: 1s; border-color: #9ca3af; box-shadow: none; animation: none;"></div>
       <div class="card p-6 md:p-8 hover:border-zinc-500/50">
-        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3">Jan 2022 - Mei 2023</div>
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3" data-key="exp3_date">Jan 2022 - Mei 2023</div>
         <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Warjali Suplai Pangan Indonesia</h3>
-        <p class="text-zinc-500 text-sm mb-4">Cook Helper</p>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp3_position">Cook Helper</p>
         <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
-          <li>Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi</li>
-          <li>Membantu proses memasak dalam operasional dapur</li>
-          <li>Menjaga kebersihan dan higienitas area dapur</li>
+          <li data-key="exp3_desc1">Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi</li>
+          <li data-key="exp3_desc2">Membantu proses memasak dalam operasional dapur</li>
+          <li data-key="exp3_desc3">Menjaga kebersihan dan higienitas area dapur</li>
         </ul>
       </div>
     </div>
@@ -416,13 +693,13 @@ nav {
     <div class="timeline-item right reveal delay-100">
       <div class="timeline-dot-zz" style="animation-delay: 1.5s; border-color: #71717a; box-shadow: none; animation: none;"></div>
       <div class="card p-6 md:p-8 hover:border-zinc-600/50">
-        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3">Juni 2021 - Jan 2022</div>
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3" data-key="exp4_date">Juni 2021 - Jan 2022</div>
         <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Bhakti Karya Distribusi</h3>
-        <p class="text-zinc-500 text-sm mb-4">Staff</p>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp4_position">Staff</p>
         <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
-          <li>Melakukan penataan barang di area display toko</li>
-          <li>Mengelola dan merapikan stok barang di gudang</li>
-          <li>Melayani transaksi pelanggan sebagai kasir</li>
+          <li data-key="exp4_desc1">Melakukan penataan barang di area display toko</li>
+          <li data-key="exp4_desc2">Mengelola dan merapikan stok barang di gudang</li>
+          <li data-key="exp4_desc3">Melayani transaksi pelanggan sebagai kasir</li>
         </ul>
       </div>
     </div>
@@ -432,8 +709,8 @@ nav {
 
 <section id="education" class="py-24 max-w-6xl mx-auto px-6">
   <div class="mb-16 reveal text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Riwayat <span class="text-accent">Akademik.</span></h2>
-    <p class="text-zinc-400">Pendidikan terakhir dan pengabdian masyarakat.</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="edu_title">Riwayat</span> <span class="text-accent" data-key="edu_title_accent">Akademik.</span></h2>
+    <p class="text-zinc-400" data-key="edu_subtitle">Pendidikan terakhir dan pengabdian masyarakat.</p>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -442,21 +719,21 @@ nav {
       <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
         <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
       </div>
-      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700">2021 - 2026</div>
-      <h3 class="text-xl font-bold text-white mb-2">S1 Teknik Informatika</h3>
-      <h4 class="text-md text-blue-400 font-medium mb-4">Universitas Pamulang</h4>
-      <p class="text-zinc-400 text-sm leading-relaxed mt-auto">
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700" data-key="edu1_date">2021 - 2026</div>
+      <h3 class="text-xl font-bold text-white mb-2" data-key="edu1_degree">S1 Teknik Informatika</h3>
+      <h4 class="text-md text-blue-400 font-medium mb-4" data-key="edu1_univ">Universitas Pamulang</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto" data-key="edu1_desc">
         Fokus pada pengembangan sistem, pemecahan masalah komputasi, dan fondasi teknologi informasi yang kuat untuk mendukung operasional kerja.
       </p>
       
       <div class="flex flex-wrap gap-3 mt-5">
         <button onclick="navigateAndOpenIjazah()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all hover:-translate-y-0.5 flex items-center gap-2 shadow-lg shadow-blue-900/20">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-          Lihat Ijazah
+          <span data-key="view_ijazah_btn">Lihat Ijazah</span>
         </button>
         <button onclick="openSeminarModal()" class="px-4 py-2.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-sm font-medium rounded-xl border border-blue-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-          Sertifikat Seminar
+          <span data-key="seminar_cert_btn">Sertifikat Seminar</span>
         </button>
       </div>
     </div>
@@ -465,16 +742,16 @@ nav {
       <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition duration-300">
         <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
       </div>
-      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700">Januari 2024</div>
-      <h3 class="text-xl font-bold text-white mb-2">Pengabdian Masyarakat</h3>
-      <h4 class="text-md text-purple-400 font-medium mb-4">SMAN 8 Kota Tangerang Selatan</h4>
-      <p class="text-zinc-400 text-sm leading-relaxed mt-auto">
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700" data-key="edu2_date">Januari 2024</div>
+      <h3 class="text-xl font-bold text-white mb-2" data-key="edu2_title">Pengabdian Masyarakat</h3>
+      <h4 class="text-md text-purple-400 font-medium mb-4" data-key="edu2_school">SMAN 8 Kota Tangerang Selatan</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto" data-key="edu2_desc">
         Tumbuhkan Kreativitas Digital Siswa/I dengan membangun Website Portofolio Interaktif di SMAN 8 Kota Tangerang Selatan.
       </p>
 
       <button onclick="openPkmModal()" class="mt-5 px-4 py-2.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm font-medium rounded-xl border border-purple-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2 w-fit">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-        Lihat Sertifikat PKM
+        <span data-key="pkm_cert_btn">Lihat Sertifikat PKM</span>
       </button>
     </div>
 
@@ -483,8 +760,8 @@ nav {
 
 <section id="skills" class="py-24 max-w-6xl mx-auto px-6">
   <div class="mb-16 reveal text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Kompetensi & <span class="text-accent">Keahlian.</span></h2>
-    <p class="text-zinc-400">Keahlian teknis dan interpersonal.</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="skills_title">Kompetensi</span> & <span class="text-accent" data-key="skills_title_accent">Keahlian.</span></h2>
+    <p class="text-zinc-400" data-key="skills_subtitle">Keahlian teknis dan interpersonal.</p>
   </div>
 
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -493,19 +770,19 @@ nav {
       <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
         <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
       </div>
-      <h3 class="text-2xl font-bold text-white mb-6">Operasional <span class="text-blue-400">Lapangan</span></h3>
+      <h3 class="text-2xl font-bold text-white mb-6"><span data-key="skill1_title">Operasional</span> <span class="text-blue-400" data-key="skill1_title_accent">Lapangan</span></h3>
       <ul class="space-y-4 mt-auto">
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Rope Access Equipment Handling</span>
+          <span data-key="skill1_item1">Rope Access Equipment Handling</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Gondola Operation</span>
+          <span data-key="skill1_item2">Gondola Operation</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Inspection & Building Maintenance</span>
+          <span data-key="skill1_item3">Inspection & Building Maintenance</span>
         </li>
       </ul>
     </div>
@@ -514,19 +791,19 @@ nav {
       <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition duration-300">
         <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
       </div>
-      <h3 class="text-2xl font-bold text-white mb-6">IT & <span class="text-indigo-400">Sistem</span></h3>
+      <h3 class="text-2xl font-bold text-white mb-6">IT & <span class="text-indigo-400" data-key="skill2_title_accent">Sistem</span></h3>
       <ul class="space-y-4 mt-auto">
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>IT Support & Troubleshooting</span>
+          <span data-key="skill2_item1">IT Support & Troubleshooting</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Windows OS Environment</span>
+          <span data-key="skill2_item2">Windows OS Environment</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>System Installation & Maintenance</span>
+          <span data-key="skill2_item3">System Installation & Maintenance</span>
         </li>
       </ul>
     </div>
@@ -535,19 +812,19 @@ nav {
       <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition duration-300">
         <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
       </div>
-      <h3 class="text-2xl font-bold text-white mb-6">Software & <span class="text-emerald-400">Tools</span></h3>
+      <h3 class="text-2xl font-bold text-white mb-6"><span data-key="skill3_title">Software</span> & <span class="text-emerald-400" data-key="skill3_title_accent">Tools</span></h3>
       <ul class="space-y-4 mt-auto">
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Microsoft Office</span>
+          <span data-key="skill3_item1">Microsoft Office</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Adobe Photoshop & Canva</span>
+          <span data-key="skill3_item2">Adobe Photoshop & Canva</span>
         </li>
         <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
           <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>Technical Documentation</span>
+          <span data-key="skill3_item3">Technical Documentation</span>
         </li>
       </ul>
     </div>
@@ -562,27 +839,305 @@ nav {
           <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
         </div>
         <div>
-          <h3 class="text-2xl font-bold text-white mb-1">Soft Skills & <span class="text-purple-400">Interpersonal</span></h3>
-          <p class="text-zinc-500 text-sm">Kemampuan adaptasi dan manajemen kerja dalam lingkungan dinamis.</p>
+          <h3 class="text-2xl font-bold text-white mb-1"><span data-key="softskill_title">Soft Skills</span> & <span class="text-purple-400" data-key="softskill_title_accent">Interpersonal</span></h3>
+          <p class="text-zinc-500 text-sm" data-key="softskill_subtitle">Kemampuan adaptasi dan manajemen kerja dalam lingkungan dinamis.</p>
         </div>
       </div>
       
       <div class="flex flex-wrap gap-3 md:gap-4 relative z-10">
-        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Analytical & Logical Thinking</span>
-        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Teamwork & Communication</span>
-        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Discipline & Responsibility</span>
-        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">High-Risk Environment Adaptability</span>
-        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm">Attention to Detail</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill1">Analytical & Logical Thinking</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill2">Teamwork & Communication</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill3">Discipline & Responsibility</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill4">High-Risk Environment Adaptability</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill5">Attention to Detail</span>
       </div>
     </div>
 
   </div>
 </section>
+    
+    <!-- ========== SECTION PROJECT PORTFOLIO (HASIL KERJA) ========== -->
+<section id="project-portfolio" class="py-24 max-w-7xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="project_title">Project</span> <span class="text-accent" data-key="project_title_accent">Portofolio.</span></h2>
+    <p class="text-zinc-400 max-w-2xl mx-auto" data-key="project_subtitle">Beberapa hasil karya dan proyek yang telah saya kerjakan.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
+    
+      
+    <!-- Project Card 1 - Demo Video Project (Showcase Video) -->
+<div class="project-card reveal delay-100" onclick="openProjectMediaModal(0)">
+  <div class="project-img-container">
+    <img src="project_video_thumb.jpg" alt="Demo Video Project" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Demo+Video+Project'">
+    <div class="project-overlay">
+      <span class="project-category">Video Demo / Multimedia</span>
+    </div>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap gap-2 mb-3">
+      <span class="tech-tag">HTML5</span>
+      <span class="tech-tag">CSS3</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Video.js</span>
+    </div>
+    <h3 class="text-xl font-bold text-white mb-2">Demo Interaktif - Aplikasi Kasir</h3>
+    <p class="text-zinc-400 text-sm leading-relaxed">Video demonstrasi lengkap fitur-fitur aplikasi kasir minimarket. Menampilkan proses transaksi, manajemen stok, dan laporan penjualan.</p>
+    <div class="mt-3 flex items-center gap-2 text-blue-400 text-sm">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5-3-5-3v6zm9-3c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+      <span>Klik untuk tonton demo video</span>
+    </div>
+  </div>
+</div>
+
+    <!-- Project Card 2 - Sistem Informasi UMKM -->
+    <div class="project-card reveal delay-200" onclick="openProjectModal(1)">
+      <div class="project-img-container">
+        <img src="project_umkm.jpg" alt="Sistem Informasi UMKM" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/60a5fa?text=Sistem+Informasi+UMKM'">
+        <div class="project-overlay">
+          <span class="project-category">Web Application</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Bootstrap</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Sistem Informasi UMKM Desa</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Aplikasi manajemen data UMKM skala desa dengan fitur CRUD produk, laporan penjualan, dan dashboard admin yang responsif.</p>
+      </div>
+    </div>
+
+    <!-- Project Card 3 - Landing Page Company -->
+    <div class="project-card reveal delay-300" onclick="openProjectModal(2)">
+      <div class="project-img-container">
+        <img src="project_landingpage.jpg" alt="Landing Page" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/60a5fa?text=Landing+Page'">
+        <div class="project-overlay">
+          <span class="project-category">UI/UX Design</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">GSAP</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Landing Page Perusahaan</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Landing page modern untuk perusahaan jasa dengan animasi scroll, form kontak, dan desain responsif yang menarik.</p>
+      </div>
+    </div>
+
+    <!-- Project Card 4 - Aplikasi Kasir Sederhana -->
+    <div class="project-card reveal delay-100" onclick="openProjectModal(3)">
+      <div class="project-img-container">
+        <img src="project_kasir.jpg" alt="Aplikasi Kasir" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/60a5fa?text=Aplikasi+Kasir'">
+        <div class="project-overlay">
+          <span class="project-category">Desktop App</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">NetBeans</span>
+          <span class="tech-tag">MySQL</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Aplikasi Kasir Minimarket</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Aplikasi desktop untuk mengelola transaksi penjualan, stok barang, dan laporan keuangan harian.</p>
+      </div>
+    </div>
+
+    <!-- Project Card 5 - Sistem Absensi QR Code -->
+    <div class="project-card reveal delay-200" onclick="openProjectModal(4)">
+      <div class="project-img-container">
+        <img src="project_absensi.jpg" alt="Sistem Absensi QR" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/60a5fa?text=Sistem+Absensi+QR'">
+        <div class="project-overlay">
+          <span class="project-category">Web Application</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">QR Code</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Bootstrap</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Sistem Absensi QR Code</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Sistem absensi karyawan berbasis QR Code dengan fitur generate QR, scan, dan rekap laporan absensi.</p>
+      </div>
+    </div>
+
+    <!-- Project Card 6 - Company Profile Website -->
+    <div class="project-card reveal delay-300" onclick="openProjectModal(5)">
+      <div class="project-img-container">
+        <img src="project_companyprofile.jpg" alt="Company Profile" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/60a5fa?text=Company+Profile'">
+        <div class="project-overlay">
+          <span class="project-category">Web Development</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">Next.js</span>
+          <span class="tech-tag">Tailwind</span>
+          <span class="tech-tag">Framer Motion</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Company Profile Interaktif</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Website company profile dengan animasi modern, galeri proyek, dan integrasi Google Maps untuk informasi lokasi.</p>
+      </div>
+    </div>
+
+  </div>
+    
+    <!-- ========== MODAL PROJECT MEDIA (FOTO & VIDEO) ========== -->
+<div id="projectMediaModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[140] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.2)] transform scale-95 transition-transform duration-300" id="projectMediaModalBox">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 id="projectMediaModalTitle" class="text-xl md:text-2xl font-bold text-white"></h3>
+        <p id="projectMediaModalCategory" class="text-sm text-blue-400 mt-1"></p>
+      </div>
+      <button onclick="closeProjectMediaModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto">
+      <!-- Tab Selector Foto/Video -->
+      <div class="px-6 pt-4">
+        <div class="media-tabs" id="mediaTabs">
+          <button class="media-tab active" data-media="video">🎬 Video Demo</button>
+          <button class="media-tab" data-media="photo">📸 Screenshot</button>
+        </div>
+      </div>
+
+      <!-- Konten Video -->
+      <div id="videoContent" class="media-content active p-6">
+        <div class="video-wrapper">
+          <video id="demoVideo" poster="project_video_thumb.jpg" preload="metadata">
+            <source src="demo_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <button id="playPauseBtn" class="play-pause">
+              <svg class="play-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="white" d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" style="display:none" viewBox="0 0 24 24" width="18" height="18"><path fill="white" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <div class="video-progress" id="videoProgress">
+              <div class="video-progress-fill" id="progressFill"></div>
+            </div>
+            <span class="video-time" id="videoTime">0:00 / 0:00</span>
+            <div class="volume-control">
+              <button id="muteBtn">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path fill="white" d="M3 9v6h4l5 5V4L7 9H3z"/></svg>
+              </button>
+              <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+            <button id="fullscreenBtn">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="white" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="mt-4">
+          <p class="text-zinc-300 text-sm">🎥 Video demonstrasi fitur-fitur utama aplikasi. Video otomatis berhenti saat modal ditutup.</p>
+        </div>
+      </div>
+
+      <!-- Konten Screenshot -->
+      <div id="photoContent" class="media-content p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <img src="project_screenshot1.jpg" class="rounded-xl border border-white/10 w-full" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Screenshot+1'">
+          <img src="project_screenshot2.jpg" class="rounded-xl border border-white/10 w-full" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Screenshot+2'">
+          <img src="project_screenshot3.jpg" class="rounded-xl border border-white/10 w-full" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Screenshot+3'">
+          <img src="project_screenshot4.jpg" class="rounded-xl border border-white/10 w-full" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Screenshot+4'">
+        </div>
+      </div>
+
+      <!-- Deskripsi Proyek -->
+      <div class="p-6 pt-0 border-t border-white/5 mt-4">
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Deskripsi Proyek</h4>
+          <p id="projectMediaModalDesc" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Teknologi yang Digunakan</h4>
+          <div id="projectMediaModalTech" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Fitur Utama</h4>
+          <ul id="projectMediaModalFeatures" class="list-disc list-inside text-zinc-300 space-y-1"></ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-2">Peran Saya</h4>
+          <p id="projectMediaModalRole" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- ========== MODAL PROJECT PORTFOLIO ========== -->
+<div id="projectModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[130] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-4xl max-h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.2)] transform scale-95 transition-transform duration-300" id="projectModalBox">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 id="projectModalTitle" class="text-xl md:text-2xl font-bold text-white"></h3>
+        <p id="projectModalCategory" class="text-sm text-blue-400 mt-1"></p>
+      </div>
+      <button onclick="closeProjectModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto">
+      <div class="modal-img-container bg-[#09090b] p-4" style="min-height: 300px;">
+        <img id="projectModalImg" class="max-w-full max-h-[50vh] object-contain mx-auto" alt="Project Screenshot" />
+      </div>
+      
+      <div class="p-6 md:p-8 project-modal-content">
+        <div class="mb-6">
+          <h4 class="text-white font-semibold text-lg mb-2">Deskripsi Proyek</h4>
+          <p id="projectModalDesc" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+        
+        <div class="mb-6">
+          <h4 class="text-white font-semibold text-lg mb-2">Teknologi yang Digunakan</h4>
+          <div id="projectModalTech" class="flex flex-wrap gap-2"></div>
+        </div>
+        
+        <div class="mb-6">
+          <h4 class="text-white font-semibold text-lg mb-2">Fitur Utama</h4>
+          <ul id="projectModalFeatures" class="list-disc list-inside text-zinc-300 space-y-1"></ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-2">Peran Saya</h4>
+          <p id="projectModalRole" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex justify-center gap-4 bg-[#18181b]">
+      <a id="projectModalLink" href="#" target="_blank" class="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl transition-all hover:-translate-y-0.5 flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        Lihat Live Demo
+      </a>
+    </div>
+
+  </div>
+</div>
+    
+    <!-- ========== DOKUMEN ========== -->
 
 <section id="portfolio" class="py-24 bg-[#050505] relative border-y border-white/5 mt-10">
   <div class="max-w-7xl mx-auto px-6 mb-10 reveal">
-    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Sertifikasi & <span class="text-accent">Dokumen</span></h2>
-    <p class="text-zinc-500">Geser untuk melihat kredensial profesional.</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="portfolio_title">Sertifikasi</span> & <span class="text-accent" data-key="portfolio_title_accent">Dokumen</span></h2>
+    <p class="text-zinc-500" data-key="portfolio_subtitle">Geser untuk melihat kredensial profesional.</p>
   </div>
   
   <div class="horizontal-scroll-container" id="scrollContainer">
@@ -593,8 +1148,8 @@ nav {
           <img src="SKL.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="Ijazah S1" onerror="this.src='https://placehold.co/600x800/27272a/ffffff?text=Ijazah+S1'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Surat Keterangan Lulus</h3>
-          <p class="text-sm text-zinc-400 mt-1">Teknik Informatika - Universitas Pamulang</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc1_title">Surat Keterangan Lulus</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc1_subtitle">Teknik Informatika - Universitas Pamulang</p>
         </div>
       </div>
       
@@ -603,8 +1158,8 @@ nav {
           <img src="sio.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="SIO Gondola" onerror="this.src='https://placehold.co/400x400/27272a/ffffff?text=SIO+TKPK+1'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">SIO TKPK 1</h3>
-          <p class="text-sm text-zinc-400 mt-1">Surat Izin Operasional Rope Access Level 1</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc2_title">SIO TKPK 1</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc2_subtitle">Surat Izin Operasional Rope Access Level 1</p>
         </div>
       </div>
 
@@ -613,8 +1168,8 @@ nav {
           <img src="sertifikat.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Pelatihan" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+Training'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat Pelatihan</h3>
-          <p class="text-sm text-zinc-400 mt-1">Pelatihan Rope Access Level 1</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc3_title">Sertifikat Pelatihan</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc3_subtitle">Pelatihan Rope Access Level 1</p>
         </div>
       </div>
       
@@ -623,8 +1178,8 @@ nav {
           <img src="sertifikat_bnsp_blur.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat BNSP Garuda" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+BNSP'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat BNSP Garuda</h3>
-          <p class="text-sm text-zinc-400 mt-1">Sertifikat hasil kompetensi BNSP Garuda jurusan Pemrograman</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc4_title">Sertifikat BNSP Garuda</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc4_subtitle">Sertifikat hasil kompetensi BNSP Garuda jurusan Pemrograman</p>
         </div>
       </div>
         
@@ -633,8 +1188,8 @@ nav {
           <img src="SERTIFIKAT_TOEFL.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Toefl" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+TOEFL'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Sertifikat TOEFL</h3>
-          <p class="text-sm text-zinc-400 mt-1">Sertifikat hasil kompetensi bahasa Inggris</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc5_title">Sertifikat TOEFL</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc5_subtitle">Sertifikat hasil kompetensi bahasa Inggris</p>
         </div>
       </div>
 
@@ -643,8 +1198,8 @@ nav {
           <img src="NPWP.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="NPWP" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=NPWP'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">NPWP</h3>
-          <p class="text-sm text-zinc-400 mt-1">Nomor Pokok Wajib Pajak</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc6_title">NPWP</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc6_subtitle">Nomor Pokok Wajib Pajak</p>
         </div>
 </div>
 
@@ -653,28 +1208,18 @@ nav {
           <img src="SKCK.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="SKCK" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=SKCK'" />
         </div>
         <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">SKCK</h3>
-          <p class="text-sm text-zinc-400 mt-1">Surat Keterangan Catatan Kepolisian</p>
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc7_title">SKCK</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc7_subtitle">Surat Keterangan Catatan Kepolisian</p>
         </div>
 </div>
-
-      <!-- <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="Paklaring" data-img="paklaring.jpg">
-        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
-          <img src="paklaring.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Paklaring" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+TOEFL'" />
-        </div>
-        <div class="p-4 mt-2">
-          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition">Paklaring</h3>
-          <p class="text-sm text-zinc-400 mt-1">Paklaring Pekerjaan Terakhir</p>
-        </div>
-</div> -->
 
     </div>
   </div>
 </section>
 
 <section id="contact" class="py-32 flex flex-col items-center justify-center text-center reveal px-6">
-  <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tight">Mari <span class="text-accent">Terhubung.</span></h2>
-  <p class="text-zinc-400 text-lg mb-12 max-w-lg">Tertarik berdiskusi tentang peluang karir atau sekadar memperluas koneksi profesional?</p>
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tight"><span data-key="contact_title">Mari</span> <span class="text-accent" data-key="contact_title_accent">Terhubung.</span></h2>
+  <p class="text-zinc-400 text-lg mb-12 max-w-lg" data-key="contact_subtitle">Tertarik berdiskusi tentang peluang karir atau sekadar memperluas koneksi profesional?</p>
   
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
     <a href="https://wa.me/628977778684" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
@@ -711,7 +1256,7 @@ nav {
 
 <p>
   <a id="floatingContact" href="#contact" class="fixed bottom-6 right-6 z-30">
-    <span id="floatingText">Hubungi Saya</span>
+    <span id="floatingText" data-key="floating_btn">Hubungi Saya</span>
     <svg id="floatingIcon" class="w-5 h-5 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
   </a>
 </p>
@@ -721,8 +1266,8 @@ nav {
     
     <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
       <div>
-        <h3 class="text-xl md:text-2xl font-bold text-white">Curriculum Vitae</h3>
-        <p class="text-sm text-zinc-400 mt-1">Preview dokumen</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="cv_title">Curriculum Vitae</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="cv_subtitle">Preview dokumen</p>
       </div>
       <button onclick="closeCVPreview()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -740,7 +1285,7 @@ nav {
         <button onclick="zoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
       </div>
       <div class="flex w-full sm:w-auto gap-3">
-        <a href="CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]">Download PDF</a>
+        <a href="CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]"><span data-key="download_cv_btn">Download PDF</span></a>
       </div>
     </div>
 
@@ -785,8 +1330,8 @@ nav {
   <div class="bg-[#18181b] w-full max-w-5xl max-h-[85vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300" id="seminarModalBox">
     <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
       <div>
-        <h3 class="text-xl md:text-2xl font-bold text-white">Sertifikat Seminar</h3>
-        <p class="text-sm text-zinc-400 mt-1">Keaktifan akademik & pengembangan diri selama perkuliahan</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="seminar_modal_title">Sertifikat Seminar</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="seminar_modal_subtitle">Keaktifan akademik & pengembangan diri selama perkuliahan</p>
       </div>
       <button onclick="closeSeminarModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -876,8 +1421,8 @@ nav {
     
     <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
       <div>
-        <h3 class="text-xl md:text-2xl font-bold text-white">Sertifikat Pengabdian Masyarakat</h3>
-        <p class="text-sm text-zinc-400 mt-1">SMAN 8 Kota Tangerang Selatan</p>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="pkm_modal_title">Sertifikat Pengabdian Masyarakat</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="pkm_modal_subtitle">SMAN 8 Kota Tangerang Selatan</p>
       </div>
       <button onclick="closePkmModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -900,6 +1445,172 @@ nav {
 </div>
 
 <script>
+// ========== BAHASA TRANSLATIONS ==========
+const translations = {
+  id: {
+    nav_about: "Tentang", nav_experience: "Pengalaman", nav_education: "Pendidikan", nav_skills: "Skill", nav_documents: "Dokumen", nav_contact: "Kontak",
+    hero_badge: "S. Kom • Rope Access Specialist",
+    hero_desc: "Menggabungkan keahlian <span class=\"text-white font-medium\">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class=\"text-blue-400 font-medium\">Rope Access Technician</span>.",
+    preview_cv_btn: "Preview CV",
+    about_title: "Profil", about_title_accent: "Singkat.",
+    about_text_1: "Lulusan S1 Teknik Informatika dengan pengalaman kerja di bidang pekerjaan ketinggian (rope access & gondola) serta operasional lapangan. Memiliki sertifikasi TKPK dan BNSP Garuda jurusan Pemrograman, serta terbiasa bekerja sesuai standar K3, melakukan inspeksi, maintenance, dan perbaikan ringan.",
+    about_text_2: "Memiliki kemampuan adaptasi yang baik di berbagai lingkungan kerja, termasuk area berisiko tinggi, serta mampu belajar dengan cepat untuk memahami prosedur, alat, dan sistem kerja baru. Dikenal sebagai pribadi disiplin, bertanggung jawab, dan mampu bekerja secara tim maupun individu.",
+    exp_title: "Jejak", exp_title_accent: "Karir.", exp_subtitle: "Pengalaman kerja profesional di berbagai sektor industri.",
+    exp1_date: "Juni 2025 - April 2026", exp1_position: "Rope Access", exp1_desc1: "Melaksanakan pekerjaan pembersihan dan perawatan gedung menggunakan metode rope access", exp1_desc2: "Melakukan inspeksi area kerja pada ketinggian untuk memastikan keamanan dan kualitas pekerjaan", exp1_desc3: "Mendukung operasional sebagai bagian dari Team Project Job area Jabodetabek",
+    exp2_date: "Sept 2023 - Juni 2025", exp2_position: "Gondola Operator", exp2_desc1: "Mengoperasikan gondola untuk pekerjaan pembersihan kaca dan fasad gedung", exp2_desc2: "Melakukan perawatan dan pengecekan peralatan kerja di ketinggian", exp2_desc3: "Menerapkan standar keselamatan kerja (K3) dalam setiap aktivitas",
+    exp3_date: "Jan 2022 - Mei 2023", exp3_position: "Cook Helper", exp3_desc1: "Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi", exp3_desc2: "Membantu proses memasak dalam operasional dapur", exp3_desc3: "Menjaga kebersihan dan higienitas area dapur",
+    exp4_date: "Juni 2021 - Jan 2022", exp4_position: "Staff", exp4_desc1: "Melakukan penataan barang di area display toko", exp4_desc2: "Mengelola dan merapikan stok barang di gudang", exp4_desc3: "Melayani transaksi pelanggan sebagai kasir",
+    edu_title: "Riwayat", edu_title_accent: "Akademik.", edu_subtitle: "Pendidikan terakhir dan pengabdian masyarakat.",
+    edu1_date: "2021 - 2026", edu1_degree: "S1 Teknik Informatika", edu1_univ: "Universitas Pamulang", edu1_desc: "Fokus pada pengembangan sistem, pemecahan masalah komputasi, dan fondasi teknologi informasi yang kuat untuk mendukung operasional kerja.",
+    view_ijazah_btn: "Lihat Ijazah", seminar_cert_btn: "Sertifikat Seminar",
+    edu2_date: "Januari 2024", edu2_title: "Pengabdian Masyarakat", edu2_school: "SMAN 8 Kota Tangerang Selatan", edu2_desc: "Tumbuhkan Kreativitas Digital Siswa/I dengan membangun Website Portofolio Interaktif di SMAN 8 Kota Tangerang Selatan.",
+    pkm_cert_btn: "Lihat Sertifikat PKM",
+    skills_title: "Kompetensi", skills_title_accent: "Keahlian.", skills_subtitle: "Keahlian teknis dan interpersonal.",
+    skill1_title: "Operasional", skill1_title_accent: "Lapangan", skill1_item1: "Rope Access Equipment Handling", skill1_item2: "Gondola Operation", skill1_item3: "Inspection & Building Maintenance",
+    skill2_title: "IT & ", skill2_title_accent: "Sistem", skill2_item1: "IT Support & Troubleshooting", skill2_item2: "Windows OS Environment", skill2_item3: "System Installation & Maintenance",
+    skill3_title: "Software", skill3_title_accent: "Tools", skill3_item1: "Microsoft Office", skill3_item2: "Adobe Photoshop & Canva", skill3_item3: "Technical Documentation",
+    softskill_title: "Soft Skills", softskill_title_accent: "Interpersonal", softskill_subtitle: "Kemampuan adaptasi dan manajemen kerja dalam lingkungan dinamis.",
+    softskill1: "Analytical & Logical Thinking", softskill2: "Teamwork & Communication", softskill3: "Discipline & Responsibility", softskill4: "High-Risk Environment Adaptability", softskill5: "Attention to Detail",
+    portfolio_title: "Sertifikasi", portfolio_title_accent: "Dokumen", portfolio_subtitle: "Geser untuk melihat kredensial profesional.",
+    doc1_title: "Surat Keterangan Lulus", doc1_subtitle: "Teknik Informatika - Universitas Pamulang",
+    doc2_title: "SIO TKPK 1", doc2_subtitle: "Surat Izin Operasional Rope Access Level 1",
+    doc3_title: "Sertifikat Pelatihan", doc3_subtitle: "Pelatihan Rope Access Level 1",
+    doc4_title: "Sertifikat BNSP Garuda", doc4_subtitle: "Sertifikat hasil kompetensi BNSP Garuda jurusan Pemrograman",
+    doc5_title: "Sertifikat TOEFL", doc5_subtitle: "Sertifikat hasil kompetensi bahasa Inggris",
+    doc6_title: "NPWP", doc6_subtitle: "Nomor Pokok Wajib Pajak",
+    doc7_title: "SKCK", doc7_subtitle: "Surat Keterangan Catatan Kepolisian",
+    contact_title: "Mari", contact_title_accent: "Terhubung.", contact_subtitle: "Tertarik berdiskusi tentang peluang karir atau sekadar memperluas koneksi profesional?",
+    floating_btn: "Hubungi Saya",
+    cv_title: "Curriculum Vitae", cv_subtitle: "Preview dokumen", download_cv_btn: "Download PDF",
+    seminar_modal_title: "Sertifikat Seminar", seminar_modal_subtitle: "Keaktifan akademik & pengembangan diri selama perkuliahan",
+    pkm_modal_title: "Sertifikat Pengabdian Masyarakat", pkm_modal_subtitle: "SMAN 8 Kota Tangerang Selatan"
+  },
+  en: {
+    nav_about: "About", nav_experience: "Experience", nav_education: "Education", nav_skills: "Skills", nav_documents: "Documents", nav_contact: "Contact",
+    hero_badge: "S. Kom • Rope Access Specialist",
+    hero_desc: "Combining <span class=\"text-white font-medium\">Informatics Engineering</span> expertise with field operational resilience as a <span class=\"text-blue-400 font-medium\">Rope Access Technician</span> specialist.",
+    preview_cv_btn: "Preview CV",
+    about_title: "Profile", about_title_accent: "Summary.",
+    about_text_1: "Bachelor's degree in Informatics Engineering with work experience in height work (rope access & gondola) and field operations. Holds TKPK and BNSP Garuda certification in Programming, accustomed to working according to HSE standards, conducting inspections, maintenance, and minor repairs.",
+    about_text_2: "Strong adaptability in various work environments, including high-risk areas, with the ability to quickly learn procedures, tools, and new work systems. Known as a disciplined, responsible individual capable of working both in teams and independently.",
+    exp_title: "Career", exp_title_accent: "Journey.", exp_subtitle: "Professional work experience in various industrial sectors.",
+    exp1_date: "June 2025 - April 2026", exp1_position: "Rope Access", exp1_desc1: "Perform building cleaning and maintenance using rope access method", exp1_desc2: "Inspect work areas at heights to ensure safety and work quality", exp1_desc3: "Support operations as part of the Project Team for Jabodetabek area",
+    exp2_date: "Sept 2023 - June 2025", exp2_position: "Gondola Operator", exp2_desc1: "Operate gondola for glass and building facade cleaning", exp2_desc2: "Perform maintenance and inspection of height work equipment", exp2_desc3: "Implement work safety standards (HSE) in every activity",
+    exp3_date: "Jan 2022 - May 2023", exp3_position: "Cook Helper", exp3_desc1: "Assist chef in preparing food ingredients according to standards and grammage", exp3_desc2: "Assist cooking process in kitchen operations", exp3_desc3: "Maintain kitchen cleanliness and hygiene",
+    exp4_date: "June 2021 - Jan 2022", exp4_position: "Staff", exp4_desc1: "Arrange goods in store display areas", exp4_desc2: "Manage and organize warehouse stock", exp4_desc3: "Serve customer transactions as cashier",
+    edu_title: "Academic", edu_title_accent: "History.", edu_subtitle: "Latest education and community service.",
+    edu1_date: "2021 - 2026", edu1_degree: "Bachelor of Informatics Engineering", edu1_univ: "Pamulang University", edu1_desc: "Focus on system development, computational problem-solving, and strong IT foundations to support operational work.",
+    view_ijazah_btn: "View Diploma", seminar_cert_btn: "Seminar Certificates",
+    edu2_date: "January 2024", edu2_title: "Community Service", edu2_school: "SMAN 8 South Tangerang City", edu2_desc: "Fostering Digital Creativity for Students by building an Interactive Portfolio Website at SMAN 8 South Tangerang City.",
+    pkm_cert_btn: "View PKM Certificate",
+    skills_title: "Competencies", skills_title_accent: "Skills.", skills_subtitle: "Technical and interpersonal skills.",
+    skill1_title: "Field", skill1_title_accent: "Operations", skill1_item1: "Rope Access Equipment Handling", skill1_item2: "Gondola Operation", skill1_item3: "Inspection & Building Maintenance",
+    skill2_title: "IT & ", skill2_title_accent: "Systems", skill2_item1: "IT Support & Troubleshooting", skill2_item2: "Windows OS Environment", skill2_item3: "System Installation & Maintenance",
+    skill3_title: "Software", skill3_title_accent: "Tools", skill3_item1: "Microsoft Office", skill3_item2: "Adobe Photoshop & Canva", skill3_item3: "Technical Documentation",
+    softskill_title: "Soft Skills", softskill_title_accent: "Interpersonal", softskill_subtitle: "Adaptability and work management skills in dynamic environments.",
+    softskill1: "Analytical & Logical Thinking", softskill2: "Teamwork & Communication", softskill3: "Discipline & Responsibility", softskill4: "High-Risk Environment Adaptability", softskill5: "Attention to Detail",
+    portfolio_title: "Certifications", portfolio_title_accent: "Documents", portfolio_subtitle: "Swipe to view professional credentials.",
+    doc1_title: "Graduation Certificate", doc1_subtitle: "Informatics Engineering - Pamulang University",
+    doc2_title: "SIO TKPK 1", doc2_subtitle: "Rope Access Level 1 Operational License",
+    doc3_title: "Training Certificate", doc3_subtitle: "Rope Access Level 1 Training",
+    doc4_title: "BNSP Garuda Certificate", doc4_subtitle: "BNSP Garuda competency certificate in Programming",
+    doc5_title: "TOEFL Certificate", doc5_subtitle: "English language competency certificate",
+    doc6_title: "NPWP", doc6_subtitle: "Taxpayer Identification Number",
+    doc7_title: "SKCK", doc7_subtitle: "Police Clearance Certificate",
+    contact_title: "Let's", contact_title_accent: "Connect.", contact_subtitle: "Interested in discussing career opportunities or simply expanding professional connections?",
+    floating_btn: "Contact Me",
+    cv_title: "Curriculum Vitae", cv_subtitle: "Document preview", download_cv_btn: "Download PDF",
+    seminar_modal_title: "Seminar Certificates", seminar_modal_subtitle: "Academic activities & personal development during college",
+    pkm_modal_title: "Community Service Certificate", pkm_modal_subtitle: "SMAN 8 South Tangerang City"
+  }
+};
+
+let currentLang = 'id';
+
+function applyLanguage(lang) {
+  const t = translations[lang];
+  document.querySelectorAll('[data-key]').forEach(el => {
+    const key = el.getAttribute('data-key');
+    if (t[key]) {
+      if (el.innerHTML && el.innerHTML.includes('<span')) {
+        el.innerHTML = t[key];
+      } else {
+        el.innerText = t[key];
+      }
+    }
+  });
+  document.querySelectorAll('.lang-switch').forEach(btn => {
+    btn.innerText = lang === 'id' ? 'EN' : 'ID';
+  });
+  currentLang = lang;
+  document.documentElement.lang = lang === 'id' ? 'id' : 'en';
+}
+
+function toggleLanguage() {
+  const newLang = currentLang === 'id' ? 'en' : 'id';
+  applyLanguage(newLang);
+}
+
+// ========== DRAWER MENU & NAVBAR HIDE LOGIC ==========
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const drawerMenu = document.getElementById('drawerMenu');
+const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+const navbar = document.getElementById('navbar');
+const drawerLinks = document.querySelectorAll('.drawer-nav-item');
+
+let isNavbarHidden = false;
+
+function openDrawer() {
+  if (navbar) {
+    navbar.style.transform = 'translate(-50%, -100%)';
+    navbar.style.opacity = '0';
+    isNavbarHidden = true;
+  }
+  if (drawerMenu) drawerMenu.classList.add('open');
+  if (drawerOverlay) drawerOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDrawer() {
+  if (navbar && isNavbarHidden) {
+    navbar.style.transform = 'translate(-50%, 0%)';
+    navbar.style.opacity = '1';
+    isNavbarHidden = false;
+  }
+  if (drawerMenu) drawerMenu.classList.remove('open');
+  if (drawerOverlay) drawerOverlay.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', openDrawer);
+}
+if (closeDrawerBtn) {
+  closeDrawerBtn.addEventListener('click', closeDrawer);
+}
+if (drawerOverlay) {
+  drawerOverlay.addEventListener('click', closeDrawer);
+}
+drawerLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+    closeDrawer();
+  });
+});
+
+// ========== INISIALISASI LAINNYA ==========
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('langSwitchBtn')?.addEventListener('click', toggleLanguage);
+  document.getElementById('drawerLangSwitchBtn')?.addEventListener('click', toggleLanguage);
+  applyLanguage('id');
+});
+
 // --- VARIABEL GLOBAL UNTUK GALERI ---
 let portfolioItems = [];
 let seminarItems = [];
@@ -912,19 +1623,16 @@ let modalScaleObj = { value: 1 }, modalXObj = { value: 0 }, modalYObj = { value:
 let pkmScaleObj = { value: 1 }, pkmPosXObj = { value: 0 }, pkmPosYObj = { value: 0 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Ambil data gambar dari HTML untuk portfolio
   portfolioItems = Array.from(document.querySelectorAll('.scroll-card')).map(card => ({
     title: card.getAttribute('data-title') || 'Dokumen',
     imgSrc: card.querySelector('img')?.src || ''
   }));
 
-  // Ambil data gambar dari HTML untuk seminar
   seminarItems = Array.from(document.querySelectorAll('.seminar-card')).map(card => ({
     title: card.getAttribute('data-title') || 'Sertifikat Seminar',
     imgSrc: card.querySelector('img')?.src || ''
   }));
 
-  // Setup interaksi Zoom & Drag
   initDrag('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform, 'cvFloatingReset');
   initPinchZoom('cvScroll', cvScaleObj, cvPosXObj, cvPosYObj, updateCVTransform);
 
@@ -934,7 +1642,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initDrag('pkmScroll', pkmScaleObj, pkmPosXObj, pkmPosYObj, updatePkmTransform, 'pkmFloatingReset');
   initPinchZoom('pkmScroll', pkmScaleObj, pkmPosXObj, pkmPosYObj, updatePkmTransform);
 
-  // Jalankan animasi hero saat web pertama dibuka
   gsap.from("#navbar", { y: -50, opacity: 0, duration: 1, ease: "power3.out" });
   gsap.from("#hero img", { scale: 0.5, opacity: 0, duration: 1.2, ease: "elastic.out(1, 0.5)", delay: 0.2 });
   gsap.from("#hero .bg-blue-900\\/30", { y: 20, opacity: 0, duration: 0.8, ease: "power3.out", delay: 0.4 });
@@ -943,29 +1650,20 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.from("#cvButtonContainer", { scale: 0.5, y: 30, opacity: 0, duration: 1, ease: "elastic.out(1, 0.7)", delay: 0.8 });
   gsap.from(".particle", { scale: 0, opacity: 0, duration: 2, stagger: 0.2, delay: 1 });
   
-  checkReveal(); updateNavButtonsVisibility();
+  checkReveal(); 
+  updateNavButtonsVisibility();
 });
 
-// FUNGSI ANIMASI NAVIGASI KE IJAZAH
 function navigateAndOpenIjazah() {
   const targetSection = document.getElementById('portfolio');
   const ijazahCard = document.getElementById('ijazahCard');
   
   if (targetSection && ijazahCard) {
-    // 1. Scroll ke section portfolio
     targetSection.scrollIntoView({ behavior: 'smooth' });
-    
-    // 2. Beri jeda sedikit agar animasi scroll selesai sebelum membuka modal
-    // 800ms biasanya cukup untuk durasi smooth scroll standar
     setTimeout(() => {
-      // 3. Highlight sejenak kartu ijazahnya (opsional untuk visual feedback)
       ijazahCard.style.borderColor = "#3b82f6";
       ijazahCard.style.boxShadow = "0 0 30px rgba(59, 130, 246, 0.5)";
-      
-      // 4. Klik kartu ijazahnya untuk membuka modal
       ijazahCard.click();
-      
-      // Kembalikan style normal setelah terbuka
       setTimeout(() => {
         ijazahCard.style.borderColor = "";
         ijazahCard.style.boxShadow = "";
@@ -974,7 +1672,6 @@ function navigateAndOpenIjazah() {
   }
 }
 
-// --- FUNGSI UPDATE GAMBAR DI MODAL UTAMA ---
 function updateModalContent(index) {
   if (!currentGallery.length || index < 0 || index >= currentGallery.length) return;
   const item = currentGallery[index];
@@ -1012,7 +1709,6 @@ function updateNavButtonsVisibility() {
   }
 }
 
-// --- FUNGSI UPDATE CSS TRANSFORM ---
 function updateCVTransform() { 
   const img = document.getElementById('cvImg'); 
   if (img) img.style.transform = `translate(${cvPosXObj.value}px, ${cvPosYObj.value}px) scale(${cvScaleObj.value})`;
@@ -1044,7 +1740,6 @@ function updatePkmTransform() {
   }
 }
 
-// --- LOGIKA DRAG & ZOOM (REUSABLE) ---
 function initDrag(elementId, scaleObj, xObj, yObj, updateFn, resetBtnId, isGallery = false) {
   const container = document.getElementById(elementId);
   if (!container) return;
@@ -1103,7 +1798,6 @@ function initPinchZoom(elementId, scaleObj, xObj, yObj, updateFn) {
   }, {passive: false});
 }
 
-// --- TOMBOL ZOOM & RESET MANUL ---
 function modalZoomIn() { modalScaleObj.value = Math.min(modalScaleObj.value + 0.1, 4); updateModalTransform(); }
 function modalZoomOut() { modalScaleObj.value = Math.max(modalScaleObj.value - 0.1, 0.5); updateModalTransform(); }
 function zoomIn() { cvScaleObj.value = Math.min(cvScaleObj.value + 0.1, 4); updateCVTransform(); }
@@ -1120,7 +1814,6 @@ document.getElementById('modalFloatingReset')?.addEventListener('click', (e) => 
 document.getElementById('cvFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetZoomCV(); });
 document.getElementById('pkmFloatingReset')?.addEventListener('click', (e) => { e.stopPropagation(); resetZoomPkm(); });
 
-// --- FUNGSI BUKA TUTUP MODAL ---
 function openCVPreview() {
   const modal = document.getElementById('cvModal');
   const box = document.getElementById('cvBox');
@@ -1141,11 +1834,11 @@ window.openModal = function(el, type) {
   const subtitle = document.getElementById('modalSubtitle');
   if (type === 'portfolio') { 
     currentGallery = portfolioItems; 
-    if(subtitle) subtitle.textContent = "Sertifikasi & Dokumen Profesional";
+    if(subtitle) subtitle.textContent = currentLang === 'id' ? "Sertifikasi & Dokumen Profesional" : "Certifications & Professional Documents";
   } 
   else if (type === 'seminar') { 
     currentGallery = seminarItems; 
-    if(subtitle) subtitle.textContent = "Keaktifan akademik & pengembangan diri selama perkuliahan";
+    if(subtitle) subtitle.textContent = currentLang === 'id' ? "Keaktifan akademik & pengembangan diri selama perkuliahan" : "Academic activities & personal development during college";
   } 
   const clickedImg = el.querySelector('img');
   const imgSrc = clickedImg ? clickedImg.src : '';
@@ -1201,16 +1894,8 @@ function closePkmModal() {
   setTimeout(() => { modal.classList.add('hidden'); document.body.style.overflow = 'auto'; }, 300);
 }
 
-// --- FUNGSI SCROLL MENU & NAVBAR ---
 const navBrand = document.getElementById('navBrand');
 if (navBrand) navBrand.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-const hamburgerBtn = document.getElementById('hamburgerBtn'), drawerOverlay = document.getElementById('drawerOverlay'), drawerMenu = document.getElementById('drawerMenu'), closeDrawerBtn = document.getElementById('closeDrawerBtn'), drawerLinks = document.querySelectorAll('.drawer-nav-item');
-function openDrawer() { drawerMenu.classList.add('open'); drawerOverlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
-function closeDrawer() { drawerMenu.classList.remove('open'); drawerOverlay.classList.remove('active'); document.body.style.overflow = 'auto'; }
-if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
-if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
-if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
-drawerLinks.forEach(link => { link.addEventListener('click', (e) => { e.preventDefault(); const targetId = link.getAttribute('href').substring(1); const targetSection = document.getElementById(targetId); if (targetSection) targetSection.scrollIntoView({ behavior: 'smooth' }); closeDrawer(); }); });
 
 const sections = document.querySelectorAll("section[id]"), glassBtns = document.querySelectorAll(".nav-glass-btn");
 function setActiveNav() { 
@@ -1221,12 +1906,10 @@ function setActiveNav() {
 }
 window.addEventListener("scroll", setActiveNav); window.addEventListener("load", setActiveNav);
 
-// --- REVEAL ANIMASI SCROLL ---
 const revealElements = document.querySelectorAll('.reveal');
 function checkReveal() { revealElements.forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('revealed'); }); }
 window.addEventListener('scroll', checkReveal); window.addEventListener('load', checkReveal);
 
-// --- DRAG SCROLL PADA DOKUMEN ---
 const scrollContainer = document.getElementById('scrollContainer');
 if(scrollContainer){ 
   let isDown=false,startX,scrollLeft; 
@@ -1249,6 +1932,454 @@ function updateFloatingButton() {
   } 
 }
 window.addEventListener("scroll", updateFloatingButton); window.addEventListener("resize", updateFloatingButton); updateFloatingButton();
+    
+    // ========== PROJECT PORTFOLIO DATA ==========
+const projectsData = [
+  {
+    title: "Website Portofolio Profesional",
+    category: "Web Development",
+    imgSrc: "project_portofolio.jpg",
+    description: "Website portofolio pribadi yang menampilkan profil, pengalaman kerja, pendidikan, skill, sertifikasi, dan portofolio proyek. Dibangun dengan desain modern dark theme, animasi GSAP yang halus, serta fitur bilingual (Indonesia/Inggris).",
+    tech: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
+    features: [
+      "Floating navbar dengan efek glassmorphism",
+      "Timeline pengalaman kerja interaktif",
+      "Galeri dokumen dengan modal preview",
+      "Fitur bahasa (ID/EN) real-time",
+      "Desain responsif untuk semua device",
+      "Animasi scroll reveal"
+    ],
+    role: "Full-stack Developer - Merancang dan mengembangkan seluruh website dari awal, termasuk UI/UX design, frontend development, dan implementasi fitur interaktif.",
+    liveLink: "https://mrahmadani.github.io/Website_Portofolio/"
+  },
+  {
+    title: "Sistem Informasi UMKM Desa",
+    category: "Web Application",
+    imgSrc: "project_umkm.jpg",
+    description: "Aplikasi web untuk mengelola data UMKM di tingkat desa. Memudahkan admin dalam mendata pelaku UMKM, produk, dan transaksi penjualan. Dilengkapi dengan dashboard analisis sederhana.",
+    tech: ["PHP", "Laravel", "MySQL", "Bootstrap", "Chart.js"],
+    features: [
+      "CRUD data UMKM dan produk",
+      "Dashboard dengan grafik penjualan",
+      "Laporan transaksi per periode",
+      "Export data ke Excel",
+      "Multi-level user (Admin, Operator)",
+      "Pencarian dan filter data"
+    ],
+    role: "Backend Developer - Membangun sistem backend dengan Laravel, merancang database MySQL, dan mengintegrasikan frontend dengan Blade template.",
+    liveLink: "#"
+  },
+  {
+    title: "Landing Page Perusahaan",
+    category: "UI/UX Design",
+    imgSrc: "project_landingpage.jpg",
+    description: "Landing page modern untuk perusahaan jasa dengan desain yang menarik dan informatif. Fokus pada konversi pengunjung menjadi leads melalui form kontak dan call-to-action yang strategis.",
+    tech: ["HTML5", "CSS3", "JavaScript", "GSAP", "AOS"],
+    features: [
+      "Hero section dengan efek parallax",
+      "Animasi scroll smooth",
+      "Form kontak dengan validasi",
+      "Testimonial slider",
+      "Integrasi Google Maps",
+      "SEO friendly structure"
+    ],
+    role: "Frontend Developer - Membangun tampilan website dengan HTML, CSS, dan JavaScript. Mengimplementasikan animasi GSAP untuk pengalaman user yang lebih interaktif.",
+    liveLink: "#"
+  },
+  {
+    title: "Aplikasi Kasir Minimarket",
+    category: "Desktop App",
+    imgSrc: "project_kasir.jpg",
+    description: "Aplikasi desktop untuk manajemen transaksi penjualan di minimarket. Memudahkan kasir dalam melakukan transaksi, mengelola stok barang, dan melihat laporan penjualan harian.",
+    tech: ["Java", "NetBeans", "MySQL", "JasperReports"],
+    features: [
+      "Manajemen produk dan stok",
+      "Transaksi penjualan cepat",
+      "Cetak struk belanja",
+      "Laporan penjualan harian/bulanan",
+      "Manajemen pengguna",
+      "Backup & restore database"
+    ],
+    role: "Desktop Developer - Mengembangkan aplikasi desktop menggunakan Java Swing, merancang database MySQL, dan membuat laporan dengan JasperReports.",
+    liveLink: "#"
+  },
+  {
+    title: "Sistem Absensi QR Code",
+    category: "Web Application",
+    imgSrc: "project_absensi.jpg",
+    description: "Sistem absensi karyawan berbasis QR Code yang memudahkan proses absensi digital. Setiap karyawan mendapatkan QR Code unik yang dapat discan untuk melakukan absensi masuk dan pulang.",
+    tech: ["PHP", "MySQL", "QR Code Library", "Bootstrap", "JavaScript"],
+    features: [
+      "Generate QR Code per karyawan",
+      "Scan QR Code untuk absensi",
+      "Rekap absensi per karyawan",
+      "Laporan keterlambatan",
+      "Notifikasi absensi via email",
+      "Export data ke PDF/Excel"
+    ],
+    role: "Full-stack Developer - Membangun sistem dari backend hingga frontend, mengintegrasikan library QR Code generator dan scanner, serta merancang database absensi.",
+    liveLink: "#"
+  },
+  {
+    title: "Company Profile Interaktif",
+    category: "Web Development",
+    imgSrc: "project_companyprofile.jpg",
+    description: "Website company profile dengan desain modern dan interaktif untuk menampilkan profil perusahaan, layanan, portofolio proyek, dan tim. Dilengkapi dengan animasi yang menarik.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "React"],
+    features: [
+      "Animasi page transition",
+      "Galeri proyek dengan lightbox",
+      "Responsive design",
+      "SEO optimization",
+      "Contact form dengan integrasi API",
+      "Dynamic routing untuk halaman layanan"
+    ],
+    role: "Frontend Developer - Membangun website menggunakan Next.js dan Tailwind CSS, mengimplementasikan animasi dengan Framer Motion, dan mengintegrasikan form kontak.",
+    liveLink: "#"
+  }
+];
+
+    
+// Fungsi untuk membuka modal project
+function openProjectModal(index) {
+  const project = projectsData[index];
+  if (!project) return;
+  
+  const modal = document.getElementById('projectModal');
+  const modalBox = document.getElementById('projectModalBox');
+  const modalTitle = document.getElementById('projectModalTitle');
+  const modalCategory = document.getElementById('projectModalCategory');
+  const modalImg = document.getElementById('projectModalImg');
+  const modalDesc = document.getElementById('projectModalDesc');
+  const modalTech = document.getElementById('projectModalTech');
+  const modalFeatures = document.getElementById('projectModalFeatures');
+  const modalRole = document.getElementById('projectModalRole');
+  const modalLink = document.getElementById('projectModalLink');
+  
+  modalTitle.innerText = project.title;
+  modalCategory.innerText = project.category;
+  modalImg.src = project.imgSrc;
+  modalImg.alt = project.title;
+  modalDesc.innerText = project.description;
+  modalRole.innerText = project.role;
+  
+  // Set fallback image jika gambar tidak ditemukan
+  modalImg.onerror = function() {
+    this.src = 'https://placehold.co/800x500/27272a/60a5fa?text=' + encodeURIComponent(project.title);
+  };
+  
+  // Generate tech tags
+  modalTech.innerHTML = project.tech.map(tech => 
+    `<span class="tech-tag">${tech}</span>`
+  ).join('');
+  
+  // Generate features list
+  modalFeatures.innerHTML = project.features.map(feature => 
+    `<li>${feature}</li>`
+  ).join('');
+  
+  // Set live link
+  if (project.liveLink && project.liveLink !== '#') {
+    modalLink.href = project.liveLink;
+    modalLink.style.display = 'flex';
+  } else {
+    modalLink.style.display = 'none';
+  }
+  
+  // Tampilkan modal dengan animasi
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    modalBox.classList.remove('scale-95');
+  }, 10);
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById('projectModal');
+  const modalBox = document.getElementById('projectModalBox');
+  modal.classList.add('opacity-0');
+  modalBox.classList.add('scale-95');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }, 300);
+}
+
+// Tutup modal dengan tombol ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('projectModal');
+    if (modal && !modal.classList.contains('hidden')) {
+      closeProjectModal();
+    }
+  }
+});
+
+// Klik overlay untuk menutup modal
+document.getElementById('projectModal')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeProjectModal();
+  }
+});
+    
+    // ========== PROJECT MEDIA DATA (CONTOH DENGAN VIDEO) ==========
+const projectMediaData = {
+  title: "Demo Interaktif - Aplikasi Kasir Minimarket",
+  category: "Video Demo / Multimedia",
+  description: "Aplikasi desktop untuk manajemen transaksi penjualan di minimarket. Video ini mendemonstrasikan seluruh fitur utama aplikasi secara lengkap dan detail.",
+  tech: ["Java", "NetBeans", "MySQL", "JasperReports"],
+  features: [
+    "Manajemen produk dan stok",
+    "Transaksi penjualan cepat",
+    "Cetak struk belanja",
+    "Laporan penjualan harian/bulanan",
+    "Manajemen pengguna",
+    "Backup & restore database"
+  ],
+  role: "Full-stack Developer - Mengembangkan aplikasi desktop menggunakan Java Swing, merancang database MySQL, dan membuat laporan dengan JasperReports.",
+  videoSrc: "demo_video.mp4",
+  videoPoster: "project_video_thumb.jpg",
+  screenshots: [
+    "project_screenshot1.jpg",
+    "project_screenshot2.jpg",
+    "project_screenshot3.jpg",
+    "project_screenshot4.jpg"
+  ]
+};
+
+// Variabel untuk video player
+let currentVideo = null;
+let videoControls = null;
+
+function openProjectMediaModal(index) {
+  const modal = document.getElementById('projectMediaModal');
+  const modalBox = document.getElementById('projectMediaModalBox');
+  const modalTitle = document.getElementById('projectMediaModalTitle');
+  const modalCategory = document.getElementById('projectMediaModalCategory');
+  const modalDesc = document.getElementById('projectMediaModalDesc');
+  const modalTech = document.getElementById('projectMediaModalTech');
+  const modalFeatures = document.getElementById('projectMediaModalFeatures');
+  const modalRole = document.getElementById('projectMediaModalRole');
+  
+  // Set data proyek
+  modalTitle.innerText = projectMediaData.title;
+  modalCategory.innerText = projectMediaData.category;
+  modalDesc.innerText = projectMediaData.description;
+  modalRole.innerText = projectMediaData.role;
+  
+  // Generate tech tags
+  modalTech.innerHTML = projectMediaData.tech.map(tech => 
+    `<span class="tech-tag">${tech}</span>`
+  ).join('');
+  
+  // Generate features list
+  modalFeatures.innerHTML = projectMediaData.features.map(feature => 
+    `<li>${feature}</li>`
+  ).join('');
+  
+  // Setup video element
+  const video = document.getElementById('demoVideo');
+  if (video) {
+    // Hentikan video sebelumnya jika ada
+    if (currentVideo) {
+      currentVideo.pause();
+      currentVideo.currentTime = 0;
+    }
+    
+    video.src = projectMediaData.videoSrc;
+    video.poster = projectMediaData.videoPoster;
+    video.load();
+    currentVideo = video;
+    
+    // Setup video controls setelah video loaded
+    setTimeout(() => setupVideoControls(video), 100);
+  }
+  
+  // Setup screenshot gallery
+  const photoContent = document.getElementById('photoContent');
+  if (photoContent && projectMediaData.screenshots.length > 0) {
+    const gridDiv = photoContent.querySelector('.grid');
+    if (gridDiv) {
+      gridDiv.innerHTML = projectMediaData.screenshots.map(img => 
+        `<img src="${img}" class="rounded-xl border border-white/10 w-full cursor-pointer" onclick="openFullImage('${img}')" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Screenshot'">`
+      ).join('');
+    }
+  }
+  
+  // Reset ke tab video
+  document.querySelector('[data-media="video"]').classList.add('active');
+  document.querySelector('[data-media="photo"]').classList.remove('active');
+  document.getElementById('videoContent').classList.add('active');
+  document.getElementById('photoContent').classList.remove('active');
+  
+  // Tampilkan modal
+  modal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    modal.classList.remove('opacity-0');
+    modalBox.classList.remove('scale-95');
+  }, 10);
+}
+
+function closeProjectMediaModal() {
+  // Hentikan video saat modal ditutup
+  if (currentVideo) {
+    currentVideo.pause();
+    currentVideo.currentTime = 0;
+  }
+  
+  const modal = document.getElementById('projectMediaModal');
+  const modalBox = document.getElementById('projectMediaModalBox');
+  modal.classList.add('opacity-0');
+  modalBox.classList.add('scale-95');
+  setTimeout(() => {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  }, 300);
+}
+
+// Setup video controls (play, pause, progress, volume, fullscreen)
+function setupVideoControls(video) {
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const progressFill = document.getElementById('progressFill');
+  const videoProgress = document.getElementById('videoProgress');
+  const videoTime = document.getElementById('videoTime');
+  const muteBtn = document.getElementById('muteBtn');
+  const volumeSlider = document.getElementById('volumeSlider');
+  const fullscreenBtn = document.getElementById('fullscreenBtn');
+  const playIcon = playPauseBtn?.querySelector('.play-icon');
+  const pauseIcon = playPauseBtn?.querySelector('.pause-icon');
+  
+  if (!video || !playPauseBtn) return;
+  
+  // Play/Pause
+  function togglePlayPause() {
+    if (video.paused) {
+      video.play();
+      if (playIcon) playIcon.style.display = 'none';
+      if (pauseIcon) pauseIcon.style.display = 'block';
+    } else {
+      video.pause();
+      if (playIcon) playIcon.style.display = 'block';
+      if (pauseIcon) pauseIcon.style.display = 'none';
+    }
+  }
+  
+  playPauseBtn.addEventListener('click', togglePlayPause);
+  
+  // Update progress bar
+  video.addEventListener('timeupdate', () => {
+    const percent = (video.currentTime / video.duration) * 100;
+    if (progressFill) progressFill.style.width = percent + '%';
+    
+    // Update time display
+    const currentMin = Math.floor(video.currentTime / 60);
+    const currentSec = Math.floor(video.currentTime % 60);
+    const totalMin = Math.floor(video.duration / 60);
+    const totalSec = Math.floor(video.duration % 60);
+    if (videoTime) {
+      videoTime.textContent = `${currentMin}:${currentSec.toString().padStart(2,'0')} / ${totalMin}:${totalSec.toString().padStart(2,'0')}`;
+    }
+  });
+  
+  // Seek video
+  if (videoProgress) {
+    videoProgress.addEventListener('click', (e) => {
+      const rect = videoProgress.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      video.currentTime = pos * video.duration;
+    });
+  }
+  
+  // Volume control
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', (e) => {
+      video.volume = e.target.value;
+      video.muted = false;
+    });
+  }
+  
+  // Mute button
+  if (muteBtn) {
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+    });
+  }
+  
+  // Fullscreen
+  if (fullscreenBtn) {
+    fullscreenBtn.addEventListener('click', () => {
+      const videoWrapper = document.querySelector('.video-wrapper');
+      if (videoWrapper.requestFullscreen) {
+        videoWrapper.requestFullscreen();
+      }
+    });
+  }
+  
+  // Auto-play video when modal opens
+  video.play().catch(e => console.log('Auto-play prevented:', e));
+  if (playIcon) playIcon.style.display = 'none';
+  if (pauseIcon) pauseIcon.style.display = 'block';
+}
+
+// Tab switching logic
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.media-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const mediaType = tab.getAttribute('data-media');
+      
+      // Update active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      
+      // Show/hide content
+      document.getElementById('videoContent').classList.toggle('active', mediaType === 'video');
+      document.getElementById('photoContent').classList.toggle('active', mediaType === 'photo');
+      
+      // Pause video when switching to photo tab
+      if (mediaType === 'photo' && currentVideo && !currentVideo.paused) {
+        currentVideo.pause();
+        const playIcon = document.querySelector('#playPauseBtn .play-icon');
+        const pauseIcon = document.querySelector('#playPauseBtn .pause-icon');
+        if (playIcon) playIcon.style.display = 'block';
+        if (pauseIcon) pauseIcon.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Full image viewer (optional)
+function openFullImage(imgSrc) {
+  const imgModal = document.createElement('div');
+  imgModal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:200;display:flex;align-items:center;justify-content:center;cursor:pointer';
+  imgModal.innerHTML = `<img src="${imgSrc}" style="max-width:90%;max-height:90%;object-fit:contain;border-radius:16px">`;
+  imgModal.onclick = () => imgModal.remove();
+  document.body.appendChild(imgModal);
+  document.body.style.overflow = 'hidden';
+  imgModal.onclick = () => {
+    imgModal.remove();
+    document.body.style.overflow = 'auto';
+  };
+}
+
+// ESC key to close modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    const modal = document.getElementById('projectMediaModal');
+    if (modal && !modal.classList.contains('hidden')) {
+      closeProjectMediaModal();
+    }
+  }
+});
+
+// Klik overlay untuk menutup modal
+document.getElementById('projectMediaModal')?.addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeProjectMediaModal();
+  }
+});
 </script>
 </body>
 </html>
