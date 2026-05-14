@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>Portofolio Profesional - Muhammad Rahmadani, S. Kom</title>
+<link rel="stylesheet" href="style.css">
+<meta property="og:title" content="Muhammad Rahmadani, S. Kom.">
+<meta property="og:description" content="Halo, saya Muhammad Rahmadani, S. Kom. Di portofolio ini, saya menampilkan perpaduan keahlian di bidang IT dengan pengalaman praktis sebagai Rope Access Technician di berbagai kondisi lapangan.">
+<meta property="og:image" content="https://mrahmadani.github.io/Website_Portofolio/foto/jarang-dirubah/fotoWA.jpg">
+<meta property="og:type" content="website">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muhammad Rahmadani, S. Kom.">
+<meta name="twitter:description" content="Halo, saya Muhammad Rahmadani, S. Kom. Di portofolio ini, saya menampilkan perpaduan keahlian di bidang IT dengan pengalaman praktis sebagai Rope Access Technician di berbagai kondisi lapangan.">
+<meta name="twitter:image" content="https://mrahmadani.github.io/Website_Portofolio/foto/jarang-dirubah/fotoWA.jpg">
+
+<link rel="icon" type="image/png" href="foto/jarang-dirubah/favicon123.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+</head>
+<body>
+<div class="bg-glow"></div>
+<div class="particle bg-blue-500 w-2 h-2 top-[20%] left-[15%] blur-[1px]" style="animation-duration: 4s;"></div>
+<div class="particle bg-blue-400 w-3 h-3 top-[60%] right-[10%] blur-[2px]" style="animation-duration: 6s; animation-delay: 1s;"></div>
+<div class="particle bg-indigo-500 w-2 h-2 bottom-[15%] left-[25%] blur-[1px]" style="animation-duration: 5s; animation-delay: 2s;"></div>
+
+<nav id="navbar">
+  <div class="nav-brand text-lg" id="navBrand">Muhammad Rahmadani</div>
+  <div class="desktop-menu">
+    <a href="#about" class="nav-glass-btn" data-key="nav_about">Tentang</a> 
+    <a href="#experience" class="nav-glass-btn" data-key="nav_experience">Pengalaman</a> 
+    <a href="#education" class="nav-glass-btn" data-key="nav_education">Pendidikan</a> 
+    <a href="#project-portfolio" class="nav-glass-btn" data-key="nav_project">Pekerjaan</a> 
+    <a href="#portfolio" class="nav-glass-btn" data-key="nav_documents">Dokumen</a> 
+    <a href="#contact" class="nav-glass-btn" data-key="nav_contact">Kontak</a>
+    <button id="langSwitchBtn" class="lang-switch">EN</button>
+  </div>
+  <div class="mobile-hamburger" id="hamburgerBtn">
+    <div class="hamburger-icon"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer-menu" id="drawerMenu">
+  <div class="drawer-header">
+    <span class="drawer-brand">M Rahmadani</span>
+    <div class="drawer-close" id="closeDrawerBtn">✕</div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <a href="#about" class="drawer-nav-item" data-key="nav_about">Tentang</a> 
+    <a href="#experience" class="drawer-nav-item" data-key="nav_experience">Pengalaman</a> 
+    <a href="#education" class="drawer-nav-item" data-key="nav_education">Pendidikan</a> 
+    <a href="#project-portfolio" class="drawer-nav-item" data-key="nav_project">Pekerjaan</a> 
+    <a href="#portfolio" class="drawer-nav-item" data-key="nav_documents">Dokumen</a> 
+    <a href="#contact" class="drawer-nav-item" data-key="nav_contact">Kontak</a>
+    <button id="drawerLangSwitchBtn" class="lang-switch mt-4 w-fit">EN</button>
+  </div>
+</div>
+
+<section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-32 pb-20 relative">
+  
+  <div class="flex flex-col items-center max-w-4xl relative z-10 w-full">
+    <div class="relative mb-10 group animate-float">
+      <div class="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-40 group-hover:opacity-80 transition duration-500 pointer-events-none"></div>
+      <img src="foto/jarang-dirubah/foto_profil123.png" alt="Foto Profil" class="relative z-10 w-40 h-40 object-cover rounded-full border-2 border-white/20 shadow-2xl" onerror="this.src='https://via.placeholder.com/160?text=Profil'" />
+    </div>
+    <div class="px-5 py-2 bg-blue-900/30 border border-blue-500/30 rounded-full text-sm font-semibold text-blue-300 mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(59,130,246,0.3)]" data-key="hero_badge">
+      S. Kom • Rope Access Specialist
+    </div>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gradient leading-tight">
+      Muhammad Rahmadani
+    </h1>
+    <h2 class="text-zinc-400 text-lg md:text-xl max-w-2xl font-light" data-key="hero_desc">
+      Menggabungkan keahlian <span class="text-white font-medium">Teknik Informatika</span> dengan ketangguhan operasional lapangan sebagai spesialis <span class="text-blue-400 font-medium">Rope Access Technician</span>.
+    </h2>
+  </div>
+
+  <div class="relative z-50 w-full flex justify-center mt-12 mb-8" id="cvButtonContainer">
+    <button onclick="openCVPreview()" class="btn-glow-primary">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+      <span data-key="preview_cv_btn">Preview CV</span>
+    </button>
+  </div>
+</section>
+
+<section id="about" class="py-24 max-w-5xl mx-auto px-6 reveal">
+  <div class="card p-8 md:p-12 border-l-4 border-l-blue-500 relative overflow-hidden group">
+    <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 group-hover:scale-110 transition duration-700 pointer-events-none">
+      <svg class="w-40 h-40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white relative z-10"><span data-key="about_title">Profil</span> <span class="text-accent" data-key="about_title_accent">Singkat.</span></h2>
+    <p class="text-zinc-300 leading-relaxed text-lg mb-4 relative z-10" data-key="about_text_1">
+      Lulusan S1 Teknik Informatika dengan pengalaman kerja di bidang pekerjaan ketinggian (rope access & gondola) serta operasional lapangan. Memiliki sertifikasi TKPK dan BNSP Garuda jurusan Pemrograman, serta terbiasa bekerja sesuai standar K3, melakukan inspeksi, maintenance, dan perbaikan ringan.
+    </p>
+    <p class="text-zinc-400 leading-relaxed text-lg relative z-10" data-key="about_text_2">
+      Memiliki kemampuan adaptasi yang baik di berbagai lingkungan kerja, termasuk area berisiko tinggi, serta mampu belajar dengan cepat untuk memahami prosedur, alat, dan sistem kerja baru. Dikenal sebagai pribadi disiplin, bertanggung jawab, dan mampu bekerja secara tim maupun individu.
+    </p>
+  </div>
+</section>
+
+  <section id="skill" class="py-24 max-w-5xl mx-auto px-6 reveal">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="skills_title">Kompetensi</span> & <span class="text-accent" data-key="skills_title_accent">Keahlian.</span></h2>
+    <p class="text-zinc-400" data-key="skills_subtitle">Keahlian teknis dan interpersonal.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <div class="card p-8 reveal delay-100 group border-t-4 border-t-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6"><span data-key="skill1_title">Operasional</span> <span class="text-blue-400" data-key="skill1_title_accent">Lapangan</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill1_item1">Rope Access Equipment Handling</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill1_item2">Gondola Operation</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill1_item3">Inspection & Building Maintenance</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card p-8 reveal delay-200 group border-t-4 border-t-indigo-500 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6">IT & <span class="text-indigo-400" data-key="skill2_title_accent">Sistem</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill2_item1">IT Support & Troubleshooting</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill2_item2">Windows OS Environment</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-indigo-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill2_item3">System Installation & Maintenance</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card p-8 reveal delay-300 group border-t-4 border-t-emerald-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-6"><span data-key="skill3_title">Software</span> & <span class="text-emerald-400" data-key="skill3_title_accent">Tools</span></h3>
+      <ul class="space-y-4 mt-auto">
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill3_item1">Microsoft Office</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill3_item2">Adobe Photoshop & Canva</span>
+        </li>
+        <li class="flex items-start gap-3 text-zinc-400 hover:text-zinc-200 transition">
+          <svg class="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span data-key="skill3_item3">Technical Documentation</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card p-8 reveal delay-100 group border-l-4 border-l-purple-500 lg:col-span-3 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] overflow-hidden relative mt-2">
+      <div class="absolute -right-4 -top-4 opacity-[0.03] group-hover:opacity-[0.08] group-hover:rotate-12 transition duration-700 pointer-events-none">
+        <svg class="w-64 h-64 text-purple-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+      </div>
+      
+      <div class="flex flex-col md:flex-row md:items-center gap-6 mb-8 relative z-10 border-b border-white/5 pb-6">
+         <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-purple-500/20 transition duration-300">
+          <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold text-white mb-1"><span data-key="softskill_title">Soft Skills</span> & <span class="text-purple-400" data-key="softskill_title_accent">Interpersonal</span></h3>
+          <p class="text-zinc-500 text-sm" data-key="softskill_subtitle">Kemampuan adaptasi dan manajemen kerja dalam lingkungan dinamis.</p>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap gap-3 md:gap-4 relative z-10">
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill1">Analytical & Logical Thinking</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill2">Teamwork & Communication</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill3">Discipline & Responsibility</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill4">High-Risk Environment Adaptability</span>
+        <span class="px-5 py-2.5 bg-[#18181b] border border-zinc-700 rounded-xl text-zinc-300 text-sm md:text-base font-medium hover:bg-purple-500/10 hover:text-purple-300 hover:border-purple-500/40 hover:-translate-y-1 transition duration-300 cursor-default shadow-sm" data-key="softskill5">Attention to Detail</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="exp_title">Jejak</span> <span class="text-accent" data-key="exp_title_accent">Karir.</span></h2>
+    <p class="text-zinc-400" data-key="exp_subtitle">Pengalaman kerja profesional di berbagai sektor industri.</p>
+  </div>
+  
+  <div class="timeline-container">
+    
+    <div class="timeline-item left reveal delay-100">
+      <div class="timeline-dot-zz"></div>
+      <div class="card p-6 md:p-8 hover:border-blue-500/80">
+        <div class="inline-block px-3 py-1 bg-blue-900/30 rounded text-xs font-semibold text-blue-400 mb-3 border border-blue-500/20" data-key="exp1_date">Juni 2025 - April 2026</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Aeon Delight Indonesia</h3>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp1_position">Rope Access</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
+          <li data-key="exp1_desc1">Melaksanakan pekerjaan pembersihan dan perawatan gedung menggunakan metode rope access</li>
+          <li data-key="exp1_desc2">Melakukan inspeksi area kerja pada ketinggian untuk memastikan keamanan dan kualitas pekerjaan</li>
+          <li data-key="exp1_desc3">Mendukung operasional sebagai bagian dari Team Project Job area Jabodetabek</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="timeline-item right reveal delay-200">
+      <div class="timeline-dot-zz" style="animation-delay: 0.5s; border-color: #60a5fa; box-shadow: 0 0 10px rgba(96,165,250,0.3);"></div>
+      <div class="card p-6 md:p-8 hover:border-blue-400/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-3 border border-zinc-700" data-key="exp2_date">Sept 2023 - Juni 2025</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Kharisma Potensia Indonesia</h3>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp2_position">Gondola Operator</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4">
+          <li data-key="exp2_desc1">Mengoperasikan gondola untuk pekerjaan pembersihan kaca dan fasad gedung</li>
+          <li data-key="exp2_desc2">Melakukan perawatan dan pengecekan peralatan kerja di ketinggian</li>
+          <li data-key="exp2_desc3">Menerapkan standar keselamatan kerja (K3) dalam setiap aktivitas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item left reveal delay-300">
+      <div class="timeline-dot-zz" style="animation-delay: 1s; border-color: #9ca3af; box-shadow: none; animation: none;"></div>
+      <div class="card p-6 md:p-8 hover:border-zinc-500/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3" data-key="exp3_date">Jan 2022 - Mei 2023</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Warjali Suplai Pangan Indonesia</h3>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp3_position">Cook Helper</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
+          <li data-key="exp3_desc1">Mendukung chef dalam menyiapkan bahan makanan sesuai standar dan gramasi</li>
+          <li data-key="exp3_desc2">Membantu proses memasak dalam operasional dapur</li>
+          <li data-key="exp3_desc3">Menjaga kebersihan dan higienitas area dapur</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item right reveal delay-100">
+      <div class="timeline-dot-zz" style="animation-delay: 1.5s; border-color: #71717a; box-shadow: none; animation: none;"></div>
+      <div class="card p-6 md:p-8 hover:border-zinc-600/50">
+        <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-400 mb-3" data-key="exp4_date">Juni 2021 - Jan 2022</div>
+        <h3 class="font-bold text-xl md:text-2xl text-white mb-1">PT Bhakti Karya Distribusi</h3>
+        <p class="text-zinc-500 text-sm mb-4" data-key="exp4_position">Staff</p>
+        <ul class="text-zinc-300 space-y-2 text-sm md:text-base list-disc ml-4 mt-3">
+          <li data-key="exp4_desc1">Melakukan penataan barang di area display toko</li>
+          <li data-key="exp4_desc2">Mengelola dan merapikan stok barang di gudang</li>
+          <li data-key="exp4_desc3">Melayani transaksi pelanggan sebagai kasir</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="edu_title">Riwayat</span> <span class="text-accent" data-key="edu_title_accent">Akademik.</span></h2>
+    <p class="text-zinc-400" data-key="edu_subtitle">Pendidikan terakhir dan pengabdian masyarakat.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+    <div class="card p-8 reveal delay-100 group border-t-4 border-t-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-blue-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+      </div>
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700" data-key="edu1_date">2021 - 2026</div>
+      <h3 class="text-xl font-bold text-white mb-2" data-key="edu1_degree">S1 Teknik Informatika</h3>
+      <h4 class="text-md text-blue-400 font-medium mb-4" data-key="edu1_univ">Universitas Pamulang</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto" data-key="edu1_desc">
+        Fokus pada pengembangan sistem, pemecahan masalah komputasi, dan fondasi teknologi informasi yang kuat untuk mendukung operasional kerja.
+      </p>
+      
+      <div class="flex flex-wrap gap-3 mt-5">
+        <button onclick="navigateAndOpenIjazah()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all hover:-translate-y-0.5 flex items-center gap-2 shadow-lg shadow-blue-900/20">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+          <span data-key="view_ijazah_btn">Lihat Ijazah</span>
+        </button>
+        <button onclick="openSeminarModal()" class="px-4 py-2.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-300 text-sm font-medium rounded-xl border border-blue-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+          <span data-key="seminar_cert_btn">Sertifikat Seminar</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="card p-8 reveal delay-200 group border-t-4 border-t-purple-500 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] flex flex-col">
+      <div class="w-14 h-14 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-purple-500/20 transition duration-300">
+        <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+      </div>
+      <div class="inline-block px-3 py-1 bg-zinc-800 rounded text-xs font-semibold text-zinc-300 mb-4 w-fit border border-zinc-700" data-key="edu2_date">Januari 2024</div>
+      <h3 class="text-xl font-bold text-white mb-2" data-key="edu2_title">Pengabdian Masyarakat</h3>
+      <h4 class="text-md text-purple-400 font-medium mb-4" data-key="edu2_school">SMAN 8 Kota Tangerang Selatan</h4>
+      <p class="text-zinc-400 text-sm leading-relaxed mt-auto" data-key="edu2_desc">
+        Tumbuhkan Kreativitas Digital Siswa/I dengan membangun Website Portofolio Interaktif di SMAN 8 Kota Tangerang Selatan.
+      </p>
+
+      <button onclick="openPkmModal()" class="mt-5 px-4 py-2.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 text-sm font-medium rounded-xl border border-purple-500/20 transition-all hover:-translate-y-0.5 flex items-center gap-2 w-fit">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+        <span data-key="pkm_cert_btn">Lihat Sertifikat PKM</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== SECTION PROJECT PORTFOLIO (HASIL KERJA - 3 PROJECT) ========== -->
+<section id="project-portfolio" class="py-24 max-w-7xl mx-auto px-6">
+  <div class="mb-16 reveal text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="project_title">Project</span> <span class="text-accent" data-key="project_title_accent">Portofolio.</span></h2>
+    <p class="text-zinc-400 max-w-2xl mx-auto" data-key="project_subtitle">Beberapa hasil karya dan proyek yang telah saya kerjakan.</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectGrid">
+    
+    <!-- Project Card 1 - Aplikasi EA Forex -->
+    <div class="project-card reveal delay-100" onclick="openProjectMediaModal(0)">
+      <div class="project-img-container">
+        <img src="project1_thumb.jpg" alt="Aplikasi EA (Robot) Forex" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/3b82f6?text=Aplikasi+EA+Forex'">
+        <div class="project-overlay">
+          <span class="project-category">EA Forex</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">Mql5</span>
+          <span class="tech-tag">C++</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Aplikasi EA (Robot) Forex</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Aplikasi EA (Robot) Automatisasi Forex dengan metode Grid & Hedging.</p>
+        <div class="mt-3 flex items-center gap-2 text-blue-400 text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5-3-5-3v6zm9-3c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          <span>Klik untuk lihat detail & demo</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Card 2 - Website Portofolio Interaktif -->
+    <div class="project-card reveal delay-200" onclick="openProjectMediaModal(1)">
+      <div class="project-img-container">
+        <img src="project2_thumb.jpg" alt="Website Portofolio Interaktif" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/8b5cf6?text=Website+Portofolio'">
+        <div class="project-overlay">
+          <span class="project-category">Web Development</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">Tailwind</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">GSAP</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Website Portofolio Interaktif</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Website portofolio profesional dengan animasi modern, responsive design, dan fitur bilingual (EN/ID).</p>
+        <div class="mt-3 flex items-center gap-2 text-blue-400 text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5-3-5-3v6zm9-3c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          <span>Klik untuk lihat detail & demo</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Project Card 3 - Sistem Informasi Perpustakaan -->
+    <div class="project-card reveal delay-300" onclick="openProjectMediaModal(2)">
+      <div class="project-img-container">
+        <img src="project3_thumb.jpg" alt="Sistem Informasi Perpustakaan" class="project-img" onerror="this.src='https://placehold.co/600x400/27272a/10b981?text=Sistem+Perpustakaan'">
+        <div class="project-overlay">
+          <span class="project-category">Web App</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">Laravel</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">jQuery</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Sistem Informasi Perpustakaan</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">Sistem manajemen perpustakaan dengan fitur peminjaman, pengembalian, dan pelaporan buku.</p>
+        <div class="mt-3 flex items-center gap-2 text-blue-400 text-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5-3-5-3v6zm9-3c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          <span>Klik untuk lihat detail & demo</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== MODAL PROJECT MEDIA (FOTO & VIDEO) UNTUK 3 PROJECT ========== -->
+<div id="projectMediaModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[140] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-5xl max-h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.2)] transform scale-95 transition-transform duration-300" id="projectMediaModalBox">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 id="projectMediaModalTitle" class="text-xl md:text-2xl font-bold text-white"></h3>
+        <p id="projectMediaModalCategory" class="text-sm text-blue-400 mt-1"></p>
+      </div>
+      <button onclick="closeProjectMediaModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto">
+      <!-- Tab Selector Foto/Video -->
+      <div class="px-6 pt-4">
+        <div class="media-tabs" id="mediaTabs">
+          <button class="media-tab active" data-media="video">🎬 Video Demo</button>
+          <button class="media-tab" data-media="photo">📸 Screenshot</button>
+        </div>
+      </div>
+
+      <!-- Konten Video -->
+      <div id="videoContent" class="media-content active p-6">
+        <div class="video-wrapper">
+          <video id="demoVideo" poster="project_video_thumb.jpg" preload="metadata">
+            <source src="" type="video/mp4" id="videoSource">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-controls">
+            <button id="playPauseBtn" class="play-pause">
+              <svg class="play-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="white" d="M8 5v14l11-7z"/></svg>
+              <svg class="pause-icon" style="display:none" viewBox="0 0 24 24" width="18" height="18"><path fill="white" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+            <div class="video-progress" id="videoProgress">
+              <div class="video-progress-fill" id="progressFill"></div>
+            </div>
+            <span class="video-time" id="videoTime">0:00 / 0:00</span>
+            <div class="volume-control">
+              <button id="muteBtn">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path fill="white" d="M3 9v6h4l5 5V4L7 9H3z"/></svg>
+              </button>
+              <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1">
+            </div>
+            <button id="fullscreenBtn">
+              <svg viewBox="0 0 24 24" width="16" height="16"><path fill="white" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="mt-4">
+          <p class="text-zinc-300 text-sm">🎥 Video demonstrasi fitur-fitur utama aplikasi. Video otomatis berhenti saat modal ditutup.</p>
+        </div>
+      </div>
+
+      <!-- Konten Screenshot -->
+      <div id="photoContent" class="media-content p-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="screenshotGrid"></div>
+      </div>
+
+      <!-- Deskripsi Proyek -->
+      <div class="p-6 pt-0 border-t border-white/5 mt-4">
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Deskripsi Proyek</h4>
+          <p id="projectMediaModalDesc" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Teknologi yang Digunakan</h4>
+          <div id="projectMediaModalTech" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div class="mb-4">
+          <h4 class="text-white font-semibold text-lg mb-2">Fitur Utama</h4>
+          <ul id="projectMediaModalFeatures" class="list-disc list-inside text-zinc-300 space-y-1"></ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-lg mb-2">Peran Saya</h4>
+          <p id="projectMediaModalRole" class="text-zinc-300 leading-relaxed"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+    <!-- ========== DOKUMEN ========== -->
+
+<section id="portfolio" class="py-24 bg-[#050505] relative border-y border-white/5 mt-10">
+  <div class="max-w-7xl mx-auto px-6 mb-10 reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2"><span data-key="portfolio_title">Sertifikasi</span> & <span class="text-accent" data-key="portfolio_title_accent">Dokumen</span></h2>
+    <p class="text-zinc-500" data-key="portfolio_subtitle">Geser untuk melihat kredensial profesional.</p>
+  </div>
+  
+  <div class="horizontal-scroll-container" id="scrollContainer">
+    <div class="horizontal-scroll-wrapper">
+
+      <div class="scroll-card card p-3 reveal delay-100" id="ijazahCard" onclick="openModal(this, 'portfolio')" data-title="Ijazah S1 Teknik Informatika" data-img="ijazah.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/SKL.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="Ijazah S1" onerror="this.src='https://placehold.co/600x800/27272a/ffffff?text=Ijazah+S1'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc1_title">Surat Keterangan Lulus</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc1_subtitle">Teknik Informatika - Universitas Pamulang</p>
+        </div>
+      </div>
+      
+      <div class="scroll-card card p-3 reveal delay-100" onclick="openModal(this, 'portfolio')" data-title="SIO TKPK 1" data-img="sio.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/sio.jpg" class="w-full h-[280px] object-cover opacity-80 group-hover:opacity-100 transition duration-700" alt="SIO Gondola" onerror="this.src='https://placehold.co/400x400/27272a/ffffff?text=SIO+TKPK+1'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc2_title">SIO TKPK 1</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc2_subtitle">Surat Izin Operasional Rope Access Level 1</p>
+        </div>
+      </div>
+
+      <div class="scroll-card card p-3 reveal delay-200" onclick="openModal(this, 'portfolio')" data-title="Sertifikat Pelatihan TKPK 1" data-img="sertifikat.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/sertifikat.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Pelatihan" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+Training'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc3_title">Sertifikat Pelatihan</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc3_subtitle">Pelatihan Rope Access Level 1</p>
+        </div>
+      </div>
+      
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="Sertifikat BNSP Garuda" data-img="sertifikat_bnsp.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/sertifikat_bnsp_blur.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat BNSP Garuda" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+BNSP'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc4_title">Sertifikat BNSP Garuda</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc4_subtitle">Sertifikat hasil kompetensi BNSP Garuda jurusan Pemrograman</p>
+        </div>
+      </div>
+        
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="Sertifikat TOEFL" data-img="SERTIFIKAT_TOEFL.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/SERTIFIKAT_TOEFL.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="Sertifikat Toefl" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=Sertifikat+TOEFL'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc5_title">Sertifikat TOEFL</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc5_subtitle">Sertifikat hasil kompetensi bahasa Inggris</p>
+        </div>
+      </div>
+
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="NPWP" data-img="NPWP.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/NPWP.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="NPWP" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=NPWP'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc6_title">NPWP</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc6_subtitle">Nomor Pokok Wajib Pajak</p>
+        </div>
+</div>
+
+      <div class="scroll-card card p-3 reveal delay-300" onclick="openModal(this, 'portfolio')" data-title="SKCK" data-img="SKCK.jpg">
+        <div class="overflow-hidden rounded-xl bg-zinc-800 relative pointer-events-none">
+          <img src="foto/dokumen/SKCK.jpg" class="w-full h-[280px] object-cover opacity-80 transition duration-700" alt="SKCK" onerror="this.src='https://placehold.co/600x400/27272a/ffffff?text=SKCK'" />
+        </div>
+        <div class="p-4 mt-2">
+          <h3 class="font-bold text-xl text-white group-hover:text-blue-400 transition" data-key="doc7_title">SKCK</h3>
+          <p class="text-sm text-zinc-400 mt-1" data-key="doc7_subtitle">Surat Keterangan Catatan Kepolisian</p>
+        </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-32 flex flex-col items-center justify-center text-center reveal px-6">
+  <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-white tracking-tight"><span data-key="contact_title">Mari</span> <span class="text-accent" data-key="contact_title_accent">Terhubung.</span></h2>
+  <p class="text-zinc-400 text-lg mb-12 max-w-lg" data-key="contact_subtitle">Tertarik berdiskusi tentang peluang karir atau sekadar memperluas koneksi profesional?</p>
+  
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-3xl">
+    <a href="https://wa.me/628977778684" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-green-500/20 group-hover:text-green-400 group-hover:border-green-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-green-400 transition">WhatsApp</span>
+    </a> 
+    
+    <a href="mailto:m.rahmadani.job@gmail.com" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 group-hover:text-blue-400 group-hover:border-blue-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-blue-400 transition">Email</span>
+    </a> 
+    
+    <a href="https://www.linkedin.com/in/bangdans08" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-[#0a66c2]/20 group-hover:text-[#0a66c2] group-hover:border-[#0a66c2]/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-[#0a66c2] transition">LinkedIn</span>
+    </a>
+    
+    <a href="https://instagram.com/BangDans8" target="_blank" class="card flex flex-col items-center justify-center p-8 hover:-translate-y-3 group" rel="noopener">
+      <div class="w-16 h-16 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center mb-4 group-hover:bg-pink-500/20 group-hover:text-pink-400 group-hover:border-pink-500/50 group-hover:scale-110 transition duration-300">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </div>
+      <span class="text-xl font-bold text-white group-hover:text-pink-400 transition">Instagram</span>
+    </a>
+  </div>
+</section>
+
+<div class="h-10"></div>
+
+<p>
+  <a id="floatingContact" href="#contact" class="fixed bottom-6 right-6 z-30">
+    <span id="floatingText" data-key="floating_btn">Hubungi Saya</span>
+    <svg id="floatingIcon" class="w-5 h-5 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+  </a>
+</p>
+
+<div id="cvModal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div id="cvBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="cv_title">Curriculum Vitae</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="cv_subtitle">Preview dokumen</p>
+      </div>
+      <button onclick="closeCVPreview()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b]" id="cvScroll">
+      <img id="cvImg" src="cv/CV github_page-0001.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="CV Preview" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=CV+Preview'" /> 
+      <button id="cvFloatingReset" class="floating-reset-btn">↺ Reset</button>
+    </div>
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-between items-center bg-[#18181b] gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="zoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="zoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+      <div class="flex w-full sm:w-auto gap-3">
+        <a href="cv/CV Muhammad Rahmadani.pdf" download="" class="flex-1 sm:flex-none text-center bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3 rounded-full transition-colors shadow-[0_0_15px_rgba(37,99,235,0.4)]"><span data-key="download_cv_btn">Download PDF</span></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modal" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[100] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div id="docBox" class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 id="modalTitle" class="text-xl md:text-2xl font-bold text-white"></h3>
+        <p id="modalSubtitle" class="text-sm text-zinc-400 mt-1"></p> 
+      </div>
+      <button onclick="closeModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div id="modalScroll" class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b] group">
+      <img id="modalImg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="Dokumen" />
+      <button id="modalFloatingReset" class="floating-reset-btn">↺ Reset</button>
+      <button id="modalNavLeft" class="modal-nav-btn left">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button id="modalNavRight" class="modal-nav-btn right">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-center items-center bg-[#18181b] gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="modalZoomOut()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="modalZoomIn()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="seminarModalContainer" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[110] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-5xl max-h-[85vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(59,130,246,0.15)] transform scale-95 transition-transform duration-300" id="seminarModalBox">
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="seminar_modal_title">Sertifikat Seminar</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="seminar_modal_subtitle">Keaktifan akademik & pengembangan diri selama perkuliahan</p>
+      </div>
+      <button onclick="closeSeminarModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="p-6 md:p-8 overflow-y-auto flex-1 custom-scrollbar">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Artificial Intelligence as Smart Solution for Indonesia's Future">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar6.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+6'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Artificial Intelligence as Smart Solution for Indonesia's Future</h4>
+            <p class="text-xs text-zinc-500">05 Desember 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Peran Artificial Intelligence dan Computer Vision dalam Membangun Ekosistem Digital">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar5.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+5'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Peran Artificial Intelligence dan Computer Vision dalam Membangun Ekosistem Digital</h4>
+            <p class="text-xs text-zinc-500">07 Juli 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Artificial intelligence dan Blockchain: Pilar Utama Personal Branding Mahasiswa Modern">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar2.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+2'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Artificial intelligence dan Blockchain: Pilar Utama Personal Branding Mahasiswa Modern</h4>
+            <p class="text-xs text-zinc-500">12 Juni 2025</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Membangun Fondasi Masa Depan: Kuliah Efektif, Pendidikan Tinggi, dan Meraih Sukses di Dunia Teknologi">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar3.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+3'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Membangun Fondasi Masa Depan: Kuliah Efektif, Pendidikan Tinggi, dan Meraih Sukses di Dunia Teknologi</h4>
+            <p class="text-xs text-zinc-500">24 Oktober 2024</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Kreativitas Tanpa Batas sebagai Strategi Ampuh Nge-Hitz di Era Digital">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar_7.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+7'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Kreativitas Tanpa Batas sebagai Strategi Ampuh Nge-Hitz di Era Digital</h4>
+            <p class="text-xs text-zinc-500">06 Juni 2024</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="Persuasive Technology and Gamification To Sustain Positive Change">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar4.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+4'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">Persuasive Technology and Gamification To Sustain Positive Change</h4>
+            <p class="text-xs text-zinc-500">07 Desember 2023</p>
+          </div>
+        </div>
+
+        <div class="seminar-card bg-zinc-800/30 border border-white/5 rounded-2xl overflow-hidden group hover:border-blue-500/30 transition-colors cursor-pointer" onclick="openModal(this, 'seminar')" data-title="The Power of Artificial Intelligence Systems for Brings Indonesia to the Industry 5.0">
+          <div class="h-40 overflow-hidden bg-zinc-900">
+            <img src="foto/jarang-dirubah/seminar/seminar1.jpg" alt="Seminar" class="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/400x300/27272a/ffffff?text=Sertifikat+Seminar+1'">
+          </div>
+          <div class="p-4">
+            <h4 class="text-white font-semibold text-sm mb-1 group-hover:text-blue-400 transition line-clamp-2">The Power of Artificial Intelligence Systems for Brings Indonesia to the Industry 5.0</h4>
+            <p class="text-xs text-zinc-500">16 Maret 2023</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pkmModalContainer" class="hidden fixed inset-0 bg-[#09090b]/95 backdrop-blur-md flex items-center justify-center z-[110] p-4 md:p-8 opacity-0 transition-opacity duration-300">
+  <div class="bg-[#18181b] w-full max-w-4xl h-full md:h-[90vh] rounded-3xl overflow-hidden relative flex flex-col border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] transform scale-95 transition-transform duration-300" id="pkmModalBox">
+    
+    <div class="p-6 md:px-8 border-b border-white/5 flex justify-between items-center shrink-0 bg-[#18181b] z-10">
+      <div>
+        <h3 class="text-xl md:text-2xl font-bold text-white" data-key="pkm_modal_title">Sertifikat Pengabdian Masyarakat</h3>
+        <p class="text-sm text-zinc-400 mt-1" data-key="pkm_modal_subtitle">SMAN 8 Kota Tangerang Selatan</p>
+      </div>
+      <button onclick="closePkmModal()" class="w-10 h-10 flex items-center justify-center rounded-full bg-[#27272a] hover:bg-[#3f3f46] border border-white/5 text-zinc-400 hover:text-white transition-all hover:rotate-90">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <div class="flex-1 min-h-0 overflow-hidden relative modal-img-container bg-[#09090b]" id="pkmScroll">
+      <img id="pkmImg" src="sertifikat_pkm.jpg" class="max-h-full max-w-full object-contain transition-transform" style="transform-origin: center;" alt="Sertifikat PKM" onerror="this.src='https://placehold.co/800x1000/27272a/ffffff?text=Sertifikat+PKM'" /> 
+      <button id="pkmFloatingReset" class="floating-reset-btn">↺ Reset</button>
+    </div>
+
+    <div class="p-4 md:p-6 border-t border-white/5 shrink-0 flex flex-col sm:flex-row justify-center items-center bg-[#18181b] gap-4">
+      <div class="flex gap-2 bg-[#27272a] p-1.5 rounded-full border border-white/5">
+        <button onclick="zoomOutPkm()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">-</button>
+        <button onclick="zoomInPkm()" class="hover:bg-[#3f3f46] text-white w-10 h-10 rounded-full font-bold transition-colors flex items-center justify-center modal-zoom-btn">+</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
