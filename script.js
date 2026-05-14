@@ -473,56 +473,56 @@ const projectsData = [
       "screenshot/kasir4.jpg"
     ]
   },
-  {
-    id: 1,
-    title: "Website Portofolio Interaktif",
-    category: "Web Development",
-    description: "Website portofolio profesional dengan animasi modern, responsive design, dan fitur bilingual (EN/ID). Dilengkapi dengan fitur preview CV, gallery dokumen, dan video demo project.",
-    tech: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
-    features: [
-      "Responsive design untuk semua device",
-      "Animasi scroll reveal dengan GSAP",
-      "Fitur bilingual Indonesia/Inggris",
-      "Preview dan download CV",
-      "Gallery sertifikat & dokumen",
-      "Video demo project dengan custom player",
-      "Dark mode modern dengan efek glassmorphism"
-    ],
-    role: "Frontend Developer - Merancang UI/UX, mengimplementasikan animasi GSAP, fitur bilingual, dan semua interaksi JavaScript.",
-    videoSrc: "video/demo_website.mp4",
-    videoPoster: "project2_thumb.jpg",
-    screenshots: [
-      "screenshot/website1.jpg",
-      "screenshot/website2.jpg",
-      "screenshot/website3.jpg",
-      "screenshot/website4.jpg"
-    ]
-  },
-  {
-    id: 2,
-    title: "Sistem Informasi Perpustakaan",
-    category: "Web App",
-    description: "Sistem manajemen perpustakaan berbasis web dengan fitur peminjaman, pengembalian, dan pelaporan buku. Dilengkapi dengan sistem autentikasi pengguna dan dashboard admin.",
-    tech: ["PHP", "Laravel", "MySQL", "Bootstrap", "jQuery"],
-    features: [
-      "Manajemen data buku, anggota, dan petugas",
-      "Transaksi peminjaman dan pengembalian",
-      "Generate laporan periode tertentu",
-      "Dashboard dengan grafik statistik",
-      "Sistem denda otomatis",
-      "Pencarian buku dengan filter",
-      "Export data ke Excel/PDF"
-    ],
-    role: "Backend Developer & Database Designer - Mengembangkan RESTful API dengan Laravel, merancang database MySQL, dan mengimplementasikan fitur laporan.",
-    videoSrc: "video/demo_perpustakaan.mp4",
-    videoPoster: "project3_thumb.jpg",
-    screenshots: [
-      "screenshot/perpustakaan1.jpg",
-      "screenshot/perpustakaan2.jpg",
-      "screenshot/perpustakaan3.jpg",
-      "screenshot/perpustakaan4.jpg"
-    ]
-  }
+  // {
+  //   id: 1,
+  //   title: "Website Portofolio Interaktif",
+  //   category: "Web Development",
+  //   description: "Website portofolio profesional dengan animasi modern, responsive design, dan fitur bilingual (EN/ID). Dilengkapi dengan fitur preview CV, gallery dokumen, dan video demo project.",
+  //   tech: ["HTML5", "CSS3", "Tailwind CSS", "JavaScript", "GSAP"],
+  //   features: [
+  //     "Responsive design untuk semua device",
+  //     "Animasi scroll reveal dengan GSAP",
+  //     "Fitur bilingual Indonesia/Inggris",
+  //     "Preview dan download CV",
+  //     "Gallery sertifikat & dokumen",
+  //     "Video demo project dengan custom player",
+  //     "Dark mode modern dengan efek glassmorphism"
+  //   ],
+  //   role: "Frontend Developer - Merancang UI/UX, mengimplementasikan animasi GSAP, fitur bilingual, dan semua interaksi JavaScript.",
+  //   videoSrc: "video/demo_website.mp4",
+  //   videoPoster: "project2_thumb.jpg",
+  //   screenshots: [
+  //     "screenshot/website1.jpg",
+  //     "screenshot/website2.jpg",
+  //     "screenshot/website3.jpg",
+  //     "screenshot/website4.jpg"
+  //   ]
+  // },
+  // {
+  //   id: 2,
+  //   title: "Sistem Informasi Perpustakaan",
+  //   category: "Web App",
+  //   description: "Sistem manajemen perpustakaan berbasis web dengan fitur peminjaman, pengembalian, dan pelaporan buku. Dilengkapi dengan sistem autentikasi pengguna dan dashboard admin.",
+  //   tech: ["PHP", "Laravel", "MySQL", "Bootstrap", "jQuery"],
+  //   features: [
+  //     "Manajemen data buku, anggota, dan petugas",
+  //     "Transaksi peminjaman dan pengembalian",
+  //     "Generate laporan periode tertentu",
+  //     "Dashboard dengan grafik statistik",
+  //     "Sistem denda otomatis",
+  //     "Pencarian buku dengan filter",
+  //     "Export data ke Excel/PDF"
+  //   ],
+  //   role: "Backend Developer & Database Designer - Mengembangkan RESTful API dengan Laravel, merancang database MySQL, dan mengimplementasikan fitur laporan.",
+  //   videoSrc: "video/demo_perpustakaan.mp4",
+  //   videoPoster: "project3_thumb.jpg",
+  //   screenshots: [
+  //     "screenshot/perpustakaan1.jpg",
+  //     "screenshot/perpustakaan2.jpg",
+  //     "screenshot/perpustakaan3.jpg",
+  //     "screenshot/perpustakaan4.jpg"
+  //   ]
+  // }
 ];
 
 // ========== VIDEO CONTROLS ==========
